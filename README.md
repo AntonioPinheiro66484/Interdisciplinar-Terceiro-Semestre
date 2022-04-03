@@ -3,10 +3,10 @@ DW3 SIG2
 ### Fatec ZL - Centro Paula Souza
 ##### Disciplina - Programação Web III
 Grupo 2 (Squirrel Tech) 
-Antonio Gabriel Pinheiro Lima
-Gustavo Neves de Oliveira
-Igor Machado Joaquim
-Aline Michelle da Silva Santana
+Antonio Gabriel Pinheiro Lima,
+Gustavo Neves de Oliveira,
+Igor Machado Joaquim,
+Aline Michelle da Silva Santana,
 Vinicius Guido Vallin
 
 ##### Processo de Desenvolvimento de Software - PDS
