@@ -1,6 +1,7 @@
 package com.fatec.SIG2.adapters;
-import java.util.Optional;
+
 import javax.validation.Valid;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.fatec.SIG2.model.Produto;
 import com.fatec.SIG2.ports.MantemProduto;
 
@@ -19,47 +21,47 @@ import com.fatec.SIG2.ports.MantemProduto;
 public class GUIProdutoController {
 	Logger logger = LogManager.getLogger(GUIProdutoController.class);
 	@Autowired
-	MantemProduto servicoProdutoProduto;
+	MantemProduto servico;
 
-	@GetMapping("/produto")
-	public ModelAndView retornaFormDeConsultaTodosProduto() {
+	@GetMapping("/produtos")
+	public ModelAndView retornaFormDeConsultaTodosProdutos() {
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
-		modelAndView.addObject("produto", servicoProduto.consultaTodos());
+		modelAndView.addObject("produtos", servico.consultaTodos());
 		return modelAndView;
 	}
 
-	@GetMapping("/produto")
+	@GetMapping("/produtos")
 	public ModelAndView retornaFormDeCadastroDe(Produto produto) {
 		ModelAndView mv = new ModelAndView("cadastrarProduto");
 		mv.addObject("produto", produto);
 		return mv;
 	}
 
-	@GetMapping("/produto/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
-	public ModelAndView retornaFormParaEditarProduto(@PathVariable("cpf") String cpf) {
-		ModelAndView modelAndView = new ModelAndView("atualizarProduto");
-		modelAndView.addObject("produto", servicoProduto.consultaPorCpf(cpf).get()); // retorna um objeto do tipo Produto
+	@GetMapping("/produtos/{cpfFabricante}") // diz ao metodo que ira responder a uma requisicao do tipo get
+	public ModelAndView retornaFormParaEditarProduto(@PathVariable("cpfFabricante") String cpfFabricante) {
+		ModelAndView modelAndView = new ModelAndView("atualizarFabricante");
+		modelAndView.addObject("fabricante", servico.consultaPorCpf(cpfFabricante).get()); // retorna um objeto do tipo Produto
 		return modelAndView; // addObject adiciona objetos para view
 	}
 
-	@GetMapping("/produto/id/{id}")
-	public ModelAndView excluirNoFormDeConsultaProduto(@PathVariable("id") Long id) {
-		servicoProduto.delete(id);
-		logger.info(">>>>>> 1. servicoProduto de exclusao chamado para o id => " + id);
+	@GetMapping("/idProduto/idProduto/{idProduto}")
+	public ModelAndView excluirNoFormDeConsultaProduto(@PathVariable("idProduto") Long idProduto) {
+		servico.delete(idProduto);
+		logger.info(">>>>>> 1. servico de exclusao chamado para o idProduto => " + idProduto);
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
-		modelAndView.addObject("produto", servicoProduto.consultaTodos());
+		modelAndView.addObject("produtos", servico.consultaTodos());
 		return modelAndView;
 	}
 
-	@PostMapping("/produto")
+	@PostMapping("/produtos")
 	public ModelAndView save(@Valid Produto produto, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
 		if (result.hasErrors()) {
 			modelAndView.setViewName("cadastrarProduto");
 		} else {
-			if (servicoProdutoProduto.save(produto).isPresent()) {
+			if (servico.save(produto).isPresent()) {
 				logger.info(">>>>>> controller chamou adastrar e consulta todos");
-				modelAndView.addObject("produto", servicoProduto.consultaTodos());
+				modelAndView.addObject("produtos", servico.consultaTodos());
 			} else {
 				logger.info(">>>>>> controller cadastrar com dados invalidos");
 				modelAndView.setViewName("cadastrarProduto");
@@ -69,17 +71,17 @@ public class GUIProdutoController {
 		return modelAndView;
 	}
 
-	@PostMapping("/produto/id/{id}")
-	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto Produto, BindingResult result) {
+	@PostMapping("/produtos/idProdutos/{idProdutos}")
+	public ModelAndView atualizaProduto(@PathVariable("idProduto") Long idProduto, @Valid Produto produto, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
-		logger.info(">>>>>> servicoProduto para atualizacao de dados chamado para o id => " + id);
+		logger.info(">>>>>> servico para atualizacao de dados chamado para o idProduto => " + idProduto);
 		if (result.hasErrors()) {
-			logger.info(">>>>>> servicoProduto para atualizacao de dados com erro => " + result.getFieldError().toString());
-			Produto.setId(id);
-			return new ModelAndView("atualizarProduto");
+			logger.info(">>>>>> servico para atualizacao de dados com erro => " + result.getFieldError().toString());
+			produto.setId(idProduto);
+			return new ModelAndView("atualizarProdutos");
 		} else {
-			servicoProduto.altera(produto);
-			modelAndView.addObject("produto", servicoProduto.consultaTodos());
+			servico.altera(produto);
+			modelAndView.addObject("produtos", servico.consultaTodos());
 		}
 		return modelAndView;
 	}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Atualizar produto</title>
+	<script type="text/javascript">
+		function consulta() {
+			window.open("/sig/produtos");
+		}
+	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<header th:replace="fragments/header :: menuSuperior">
+	<div>header</div>
+</header>
+
+<body>
+	<div class="container my-5">
+		<br />
+		<h3>Atualizar Produto</h3>
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-8">
+					<form action="#" th:action="@{/sig/produtos/id/{id} (id=${produto.idProduto}) }" th:object="${produto}"
+						method="post">
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="cpfFornecedor" class="col-form-label">CPF</label> <input type="text" th:field="*{cpfFornecedor}"
+									class="form-control" id="cpf" placeholder="cpfFornecedor"> <span
+									th:if="${#fields.hasErrors('cpfFornecedor')}" th:errors="*{cpfFornecedor}" class="text-danger">
+								</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="dataNascimento" class="col-form-label">Nome do Fornecedor</label>
+								<input type="text" th:field="*{nomeFornecedor}" class="form-control" id="nomeFornecedor"
+									placeholder="Nome do fornecedor">
+								<span th:if="${#fields.hasErrors('nomeFornecedor')}" th:errors="*{nomeFornecedor}"
+									class="text-danger">
+								</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="nomeProduto" class="col-form-label">Nome Produto</label>
+								<input type="text" th:field="*{nomeProduto}" class="form-control" id="nomeProduto" placeholder="Nome do Produto...">
+								<span th:if="${#fields.hasErrors('nomeProduto')}" th:errors="*{nomeProduto}" class="text-danger">
+								</span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="preco" class="col-form-label">Preço do Produto</label>
+								<input type="text" th:field="*{preco}" class="form-control" id="preco" placeholder="CEP">
+								<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="marca" class="col-form-label">Marca</label>
+								<input type="text" th:field="*{marca}" class="form-control" id="marca"
+									placeholder="Digite o nome da marca" readonly>
+								<span th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"
+									class="text-danger"></span>
+							</div>
+							
+							<div class="form-group col-md-8">
+								<input type="submit" class="btn btn-primary" value="Atualizar Produto">
+								<input type="button" class="btn btn-primary" value="Consultar Produto"
+									onclick="consulta();">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<h6 th:text="${message}" class="text-danger"></h6>
+		</div>
+	</div>
+</body>
+
+</html>

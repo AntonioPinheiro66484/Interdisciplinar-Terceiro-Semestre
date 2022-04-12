@@ -1,57 +1,56 @@
 package com.fatec.SIG2.model;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.br.CPF;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
-
-@Entity
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idProduto;
-	@NotBlank(message = "Nome do produto é requerido")
+	@NotBlank(message = "Nome do Produto é Requerido")
 	private String nomeProduto;
-	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de fabricação deve estar no formato dd/MM/YYYY")
-	// https://www.regular-expressions.info/
-	private String dataFabricacao;
+	private String nomeFornecedor;
+	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
+//https://www.regular-expressions.info/ 
 	private String dataCadastroProduto;
-	private String produtoDescricao;
-	private Float precoProduto;
-	private String fabricante;
-	private String marcaProduto;
+	private String marca;
+	private float preco;
+	@CPF
+	@Column(unique = true)
+	private String cpfFornecedor;
 
-	public Produto(String nomeProduto, String dataFabricacao, String dataCadastroProduto) {
+	public Produto(String nomeProduto,Float preco, String nomeFornecedor, String dataCadastroProduto,  String marca) {
 		this.nomeProduto = nomeProduto;
-		setDataFabricacao(dataFabricacao);
-		setDataCadastroProduto(dataCadastroProduto);
-
+		setDataFabricacao(dataCadastroProduto);
+		this.marca = marca;
+		this.preco = preco;
+		this.nomeFornecedor = nomeFornecedor;
 	}
 
-	private void setDataCadastroProduto(String dataCadastroProduto2) {
-		// TODO Auto-generated method stub
 
-	}
-
-	private void setDataFabricacao(String dataFabricacao2) {
-		// TODO Auto-generated method stub
-
-	}
 
 	public Produto() {
-
 	}
 
 	public Long getId() {
 		return idProduto;
+
 	}
 
-	public void setId(Long id) {
+	public void setId(Long idProduto) {
 		this.idProduto = idProduto;
 	}
 
@@ -59,71 +58,62 @@ public class Produto {
 		return nomeProduto;
 	}
 
-	public void setNome(String nomeProduto) {
-		this.nomeProduto = nomeProduto;
+	public void getNomeFornecedor(String nomeFornecedor) {
+		this.nomeFornecedor=nomeFornecedor;
+	}
+	
+	public String getNomeFornecedor() {
+		return nomeFornecedor;
 	}
 
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto=nomeProduto;
+	}
+	
 	public String getDataCadastroProduto() {
 		return dataCadastroProduto;
 	}
-
-	public String getDataFabricação() {
-		return dataFabricacao;
+	public void setDataCadastroProduto(String dataAtual) {
+		this.dataCadastroProduto = dataAtual;
 	}
 
-	public Float getPrecoProduto() {
-		return precoProduto;
-	}
-
-	public void setPrecoProduto(Float precoProduto) {
-		this.precoProduto = precoProduto;
-	}
-
-	public String getMarcaProduto() {
-		return marcaProduto;
-	}
-
-	public void setMarcaProduto(String marcaProduto) {
-		this.marcaProduto = marcaProduto;
+	
+	public Float getPreco() {
+		return preco;
 	}
 	
-	public String getProdutoDescricao() {
-		return produtoDescricao;
+	public void setPreco(Float preco) {
+		this.preco = preco;
 	}
-
-	public void setProdutoDescricao(String produtoDescricao) {
-		this.produtoDescricao = produtoDescricao;
+	
+	public String getMarca() {
+		return marca;
 	}
-
-	public String getFabricante() {
-		return fabricante;
+	
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
-
-	public void setFabricante(String fabricante) {
-		this.fabricante = fabricante;
-	}
-
-	public void setDataNascimento(String dataFabricacao) {
-		if (validaData(dataFabricacao) == true) {
-			this.dataFabricacao = dataFabricacao;
-		} else {
-			throw new IllegalArgumentException("Data invalida");
-		}
-	}
-
+	
 	public boolean validaData(String data) {
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-		df.setLenient(false); //
-		try {
-			df.parse(data); // data válida (exemplo 30 fev - 31 nov)
-			return true;
-		} catch (ParseException ex) {
-			return false;
-		}
+		 DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		 df.setLenient(false); //
+		 try {
+		 df.parse(data); // data válida (exemplo 30 fev - 31 nov)
+		 return true;
+		 } catch (ParseException ex) {
+		 return false;
+		 }
+		 }
+		 public void obtemDataAtual(DateTime dataAtual) {
+		 DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
+		 this.dataCadastroProduto = dataAtual.toString(fmt);
+		 } 
+	
+	
+	
+	private void setDataFabricacao(String dataCadastroProduto2) {
+		// TODO Auto-generated method stub
+		
 	}
-
-
-
-	// equals e tostring omitidos
 
 }
