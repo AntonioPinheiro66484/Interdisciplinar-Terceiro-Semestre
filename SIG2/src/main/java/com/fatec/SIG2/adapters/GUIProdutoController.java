@@ -30,24 +30,24 @@ public class GUIProdutoController {
 		return modelAndView;
 	}
 
-	@GetMapping("/produtos")
+	@GetMapping("/produto")
 	public ModelAndView retornaFormDeCadastroDe(Produto produto) {
 		ModelAndView mv = new ModelAndView("cadastrarProduto");
 		mv.addObject("produto", produto);
 		return mv;
 	}
 
-	@GetMapping("/produtos/{cpfFabricante}") // diz ao metodo que ira responder a uma requisicao do tipo get
-	public ModelAndView retornaFormParaEditarProduto(@PathVariable("cpfFabricante") String cpfFabricante) {
-		ModelAndView modelAndView = new ModelAndView("atualizarFabricante");
-		modelAndView.addObject("fabricante", servico.consultaPorCpf(cpfFabricante).get()); // retorna um objeto do tipo Produto
+	@GetMapping("/produtos/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
+	public ModelAndView retornaFormParaEditarProduto(@PathVariable("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("atualizarProduto");
+		modelAndView.addObject("produto", servico.consultaPorId(id).get()); // retorna um objeto do tipo cliente
 		return modelAndView; // addObject adiciona objetos para view
 	}
 
-	@GetMapping("/idProduto/idProduto/{idProduto}")
-	public ModelAndView excluirNoFormDeConsultaProduto(@PathVariable("idProduto") Long idProduto) {
-		servico.delete(idProduto);
-		logger.info(">>>>>> 1. servico de exclusao chamado para o idProduto => " + idProduto);
+	@GetMapping("/produtos/id/{id}")
+	public ModelAndView excluirNoFormDeConsultaProduto(@PathVariable("id") Long id) {
+		servico.delete(id);
+		logger.info(">>>>>> 1. servico de exclusao chamado para o id => " + id);
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
 		modelAndView.addObject("produtos", servico.consultaTodos());
 		return modelAndView;
@@ -71,14 +71,14 @@ public class GUIProdutoController {
 		return modelAndView;
 	}
 
-	@PostMapping("/produtos/idProdutos/{idProdutos}")
-	public ModelAndView atualizaProduto(@PathVariable("idProduto") Long idProduto, @Valid Produto produto, BindingResult result) {
+	@PostMapping("/produtos/id/{id}")
+	public ModelAndView atualizaProduto(@PathVariable("id") Long id, @Valid Produto produto, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarProduto");
-		logger.info(">>>>>> servico para atualizacao de dados chamado para o idProduto => " + idProduto);
+		logger.info(">>>>>> servico para atualizacao de dados chamado para o id => " + id);
 		if (result.hasErrors()) {
 			logger.info(">>>>>> servico para atualizacao de dados com erro => " + result.getFieldError().toString());
-			produto.setId(idProduto);
-			return new ModelAndView("atualizarProdutos");
+			produto.setId(id);
+			return new ModelAndView("atualizarProduto");
 		} else {
 			servico.altera(produto);
 			modelAndView.addObject("produtos", servico.consultaTodos());

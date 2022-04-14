@@ -1,119 +1,107 @@
 package com.fatec.SIG2.model;
 
+
+//equals e tostring omitidos. Criado na aula de 05/04/2022
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Objects;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-import org.hibernate.validator.constraints.br.CPF;
+
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+@Entity
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idProduto;
-	@NotBlank(message = "Nome do Produto é Requerido")
-	private String nomeProduto;
-	private String nomeFornecedor;
-	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
-//https://www.regular-expressions.info/ 
-	private String dataCadastroProduto;
-	private String marca;
-	private float preco;
-	@CPF
-	@Column(unique = true)
-	private String cpfFornecedor;
+	private Long id;
+	@NotBlank(message = "Nome é requerido")
+	private String nome;
+	private int qtdEstoque;
+	private Double preco;
+	private String dataCadastro;
 
-	public Produto(String nomeProduto,Float preco, String nomeFornecedor, String dataCadastroProduto,  String marca) {
-		this.nomeProduto = nomeProduto;
-		setDataFabricacao(dataCadastroProduto);
-		this.marca = marca;
-		this.preco = preco;
-		this.nomeFornecedor = nomeFornecedor;
+	
+	public Produto(String nome, Double preco) {
+		this.nome = nome;
+		this.setPreco(preco);
 	}
-
-
 
 	public Produto() {
+
 	}
+
+
 
 	public Long getId() {
-		return idProduto;
-
+		return id;
 	}
 
-	public void setId(Long idProduto) {
-		this.idProduto = idProduto;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getNomeProduto() {
-		return nomeProduto;
+	public int getQtdEstoque() {
+		return qtdEstoque;
 	}
 
-	public void getNomeFornecedor(String nomeFornecedor) {
-		this.nomeFornecedor=nomeFornecedor;
+	public void setQtdEstoque( int qtdEstoque) {
+		this.qtdEstoque = qtdEstoque;
 	}
 	
-	public String getNomeFornecedor() {
-		return nomeFornecedor;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeProduto(String nomeProduto) {
-		this.nomeProduto=nomeProduto;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
-	public String getDataCadastroProduto() {
-		return dataCadastroProduto;
-	}
-	public void setDataCadastroProduto(String dataAtual) {
-		this.dataCadastroProduto = dataAtual;
-	}
-
 	
-	public Float getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
-	
-	public void setPreco(Float preco) {
+
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
-	
-	public String getMarca() {
-		return marca;
+
+	public String getDataCadastro() {
+		return dataCadastro;
 	}
-	
-	public void setMarca(String marca) {
-		this.marca = marca;
+
+	public void setDataCadastro(String dataAtual) {
+		this.dataCadastro = dataAtual;
 	}
-	
+
 	public boolean validaData(String data) {
-		 DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-		 df.setLenient(false); //
-		 try {
-		 df.parse(data); // data válida (exemplo 30 fev - 31 nov)
-		 return true;
-		 } catch (ParseException ex) {
-		 return false;
-		 }
-		 }
-		 public void obtemDataAtual(DateTime dataAtual) {
-		 DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
-		 this.dataCadastroProduto = dataAtual.toString(fmt);
-		 } 
-	
-	
-	
-	private void setDataFabricacao(String dataCadastroProduto2) {
-		// TODO Auto-generated method stub
-		
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		df.setLenient(false); //
+		try {
+			df.parse(data); // data válida (exemplo 30 fev - 31 nov)
+			return true;
+		} catch (ParseException ex) {
+			return false;
+		}
 	}
+
+	public void obtemDataAtual(DateTime dataAtual) {
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
+		this.dataCadastro = dataAtual.toString(fmt);
+	}
+
+
+
+
+
+
+
+	// equals e tostring omitidos. Cliado na aula de 05/04/2022
 
 }

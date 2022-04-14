@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Atualizar produto</title>
+	<title>Atualizar Produto</title>
 	<script type="text/javascript">
 		function consulta() {
 			window.open("/sig/produtos");
@@ -27,60 +27,46 @@
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
-					<form action="#" th:action="@{/sig/produtos/id/{id} (id=${produto.idProduto}) }" th:object="${produto}"
+					<form action="#" th:action="@{/sig/produtos/id/{id} (id=${produto.id}) }" th:object="${produto}"
 						method="post">
 						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="cpfFornecedor" class="col-form-label">CPF</label> <input type="text" th:field="*{cpfFornecedor}"
-									class="form-control" id="cpf" placeholder="cpfFornecedor"> <span
-									th:if="${#fields.hasErrors('cpfFornecedor')}" th:errors="*{cpfFornecedor}" class="text-danger">
-								</span>
-							</div>
-						</div>
-						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="dataNascimento" class="col-form-label">Nome do Fornecedor</label>
-								<input type="text" th:field="*{nomeFornecedor}" class="form-control" id="nomeFornecedor"
-									placeholder="Nome do fornecedor">
-								<span th:if="${#fields.hasErrors('nomeFornecedor')}" th:errors="*{nomeFornecedor}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="nomeProduto" class="col-form-label">Nome Produto</label>
-								<input type="text" th:field="*{nomeProduto}" class="form-control" id="nomeProduto" placeholder="Nome do Produto...">
-								<span th:if="${#fields.hasErrors('nomeProduto')}" th:errors="*{nomeProduto}" class="text-danger">
+								<label for="nome" class="col-form-label">Nome</label>
+								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
+								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="preco" class="col-form-label">Preço do Produto</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="preco" placeholder="CEP">
-								<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-danger"></span>
-							</div>
-							<div class="form-group col-md-8">
-								<label for="marca" class="col-form-label">Marca</label>
-								<input type="text" th:field="*{marca}" class="form-control" id="marca"
-									placeholder="Digite o nome da marca" readonly>
-								<span th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"
-									class="text-danger"></span>
-							</div>
-							
-							<div class="form-group col-md-8">
-								<input type="submit" class="btn btn-primary" value="Atualizar Produto">
-								<input type="button" class="btn btn-primary" value="Consultar Produto"
-									onclick="consulta();">
+								<label for="preco" class="col-form-label">Preço</label>
+								<input type="text" th:field="*{preco}" class="form-control" id="preco"
+									placeholder="Preço">
 							</div>
 						</div>
-					</form>
+						
+						<div class="form-group col-md-8">
+								<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
+								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
+									placeholder="qtdEstoque">
+								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}"
+									class="text-danger">
+								</span>
+							</div>		
+
+
+						<div class="form-group col-md-8">
+							<input type="submit" class="btn btn-primary" value="Atualizar Produto">
+							<input type="button" class="btn btn-primary" value="Consultar Produto"
+								onclick="consulta();">
+						</div>
 				</div>
+				</form>
 			</div>
-			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
+		<h6 th:text="${message}" class="text-danger"></h6>
+	</div>
 	</div>
 </body>
 
