@@ -40,7 +40,7 @@ public class GUIProdutoController {
 	@GetMapping("/produtos/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarProduto(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("atualizarProduto");
-		modelAndView.addObject("produto", servico.consultaPorId(id).get()); // retorna um objeto do tipo cliente
+		modelAndView.addObject("produto", servico.consultaPorId(id).get()); // retorna um objeto do tipo produto
 		return modelAndView; // addObject adiciona objetos para view
 	}
 
