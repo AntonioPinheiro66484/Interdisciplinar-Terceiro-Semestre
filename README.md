@@ -52,6 +52,12 @@ Os seguintes requisitos foram identificados na primeira reunião com o cliente (
 | REQ04 – consultar todos os clientes | Como – vendedor, Eu quero – consultar todos os clientes cadastrado, De maneira que – seja possível obter uma lista de clientes | Baixa |
 | REQ05 – corrigir informações de cliente | Como – vendedor, Eu quero – corrigir as informações do cliente, De maneira que – seja possível manter as informações atualizadas | Baixa |
 | REQ06 – excluir cliente | Como – vendedor, Eu quero – excluir um cliente, De maneira que – seja possível manter informações somente de clientes ativos | Baixa |
+| REQ07 – cadastrar produto | Como – vendedor, Eu quero – cadastrar o produto, De maneira que – seja possível identificar o seu fabricante e o seu fornecedor para confirmar o cadastro do produto| Média |
+| REQ08 – consultar produto por ID| Como – vendedor, Eu quero – consultar um produto pelo ID, De maneira que – seja possível obter informações detalhas do produto | Alta |
+| REQ09 – consultar produto por codigo de identificação dos produtos | Como – vendedor, Eu quero – consultar um produto, De maneira que – tenha um controle sobre estoque e todo processo de venda| Alta |
+| REQ010 – consultar todos os produtos | Como – vendedor, Eu quero – consultar todos os produtos cadastrado, De maneira que – seja possível obter uma lista de produtos | Baixa |
+| REQ11 – corrigir informações de produtos | Como – vendedor, Eu quero – corrigir as informações do produtos, De maneira que – seja possível manter as informações atualizadas | Baixa |
+| REQ12 – excluir produto | Como – vendedor, Eu quero – excluir um produto, De maneira que – seja possível manter informações somente de produtos em estoque | Baixa |
 
 ##### Análise do comportamento
 > Exemplos de uso estabelecem o comportamento esperado da aplicação. Os casos de teste (CT) são rastreaveis para os requsiitos (REQ). O elo de rastreabilidade é estabelecido pelo identificador do caso de teste.
@@ -88,7 +94,7 @@ A visão lógica da arquitetura para API de Cliente é apresentada na figura aba
 ![f3_visao_logica](https://user-images.githubusercontent.com/79329807/160613345-a9570c0a-09b6-47a5-b897-6664ce23de92.jpg)
 
 
->As operações da entidade Cliente identificada no modelo de dominio do SIG-VS são especificadas como um serviço que apoia o processo de venda. O contrato das operações de sistema devem ser definidos (LARMAN, 2006, pag 140). 
+>As operações da entidade Cliente identificada no modelo de dominio do SIG-2 são especificadas como um serviço que apoia o processo de venda. O contrato das operações de sistema devem ser definidos (LARMAN, 2006, pag 140). 
 
 ```mermaid
 classDiagram
@@ -113,6 +119,33 @@ ClienteServiceI ->> ClienteRepository: findAll ( )
 ClienteRepository -->> ClienteServiceI: ArrayList[]
 ClienteServiceI-->> APIClienteController: ArrayList[]
 APIClienteController -->> Usuario: ResponseEntity
+
+```
+
+>As operações da entidade Produto identificada no modelo de dominio do SIG-2 são especificadas como um serviço que apoia o processo de venda. O contrato das operações de sistema devem ser definidos (LARMAN, 2006, pag 140). 
+```mermaid
+classDiagram
+    class ProdutoServicoI
+    <<interface>> ProdutoServicoI
+    
+    ProdutoServicoI: +List<Produto> consultaTodos()
+    ProdutoServicoI: +Optional<<Produto>> consultaPorId(Long idProduto)
+    ProdutoServicoI: +Optional<<Produto>> save(Produto p)
+    ProdutoServicoI: +void delete (Long idProduto)
+    ProdutoServicoI: +Optional<<Produto>> altera (Produto p)
+
+```
+
+> O diagrama de sequência descreve como os varios componentes arquiteturais colaboram para manipular uma operação de sistema (exemplo para operação consultaTodos())
+```mermaid
+sequenceDiagram 
+Usuario ->> APIProdutoController: GET /api/v1/produtos
+APIProdutoController ->> ProdutoServicoI: consultaTodos ( )
+ProdutoServicoI->> ProdutoRepository: findAll ( )
+ProdutoRepository -->> ProdutoServiceI: ArrayList[]
+ProdutoServicoI-->> APIProdutoController: ArrayList[]
+APIProdutoController -->> Usuario: ResponseEntity
+
 ```
 >Referencias
 - [1] KRUCHTEN, Philippe. Reference: Title: Architectural blueprints—the “4+ 1” view model of software architecture. IEEE software, v. 12, n. 6, 1995.
