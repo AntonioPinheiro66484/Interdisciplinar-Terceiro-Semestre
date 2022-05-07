@@ -50,7 +50,7 @@ public class MantemProdutoI implements MantemProduto {
 		Optional<Produto> umProduto = consultaPorId(produto.getId());
 
 		if (umProduto.isPresent()) {
-			Produto produtoModificado = new Produto(produto.getNome(), produto.getPreco());
+			Produto produtoModificado = new Produto(produto.getNome(), produto.getPreco(),produto.getDescricao(),produto.getFabricante(),produto.getFornecedor(),produto.getCnpjFornecedor());
 			produtoModificado.setId(produto.getId());
 			produtoModificado.setQtdEstoque(produto.getQtdEstoque());
 			produtoModificado.obtemDataAtual(new DateTime());

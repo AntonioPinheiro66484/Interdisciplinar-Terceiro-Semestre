@@ -32,6 +32,10 @@
 						<tr>
 							<th>ID</th>
 							<th>Nome</th>
+							<th>Descrição</th>
+							<th>Fabricante</th>
+							<th>Fornecedor</th>
+							<th>CNPJ do Fornecedor</th>
 							<th>Preço</th>
 							<th>Dt.Cadastro</th>
 							<th>Qtd.Estoque</th>
@@ -42,6 +46,10 @@
 						<tr th:each="produto : ${produtos}">
 							<td th:text="${produto.id}"></td>
 							<td th:text="${produto.nome}"></td>
+							<td th:text="${produto.descricao}"></td>
+							<td th:text="${produto.fabricante}"></td>
+							<td th:text="${produto.fornecedor}"></td>
+							<td th:text="${produto.cnpjFornecedor}"></td>
 							<td th:text="${produto.preco}"></td>
 							<td th:text="${produto.dataCadastro}"></td>
 							<td th:text="${produto.qtdEstoque}"></td>

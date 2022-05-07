@@ -23,14 +23,23 @@ public class Produto {
 	private Long id;
 	@NotBlank(message = "Nome é requerido")
 	private String nome;
+	private String descricao;
+	private String fabricante;
+	private String fornecedor;
+	private String cnpjFornecedor;
 	private int qtdEstoque;
 	private Double preco;
 	private String dataCadastro;
 
 	
-	public Produto(String nome, Double preco) {
+	public Produto(String nome, Double preco,String descricao,String fabricante,String fornecedor, String cnpjFornecedor) {
 		this.nome = nome;
+		this.descricao= descricao;
+		this.fabricante=fabricante;
+		this.fornecedor=fornecedor;
+		this.cnpjFornecedor=cnpjFornecedor;
 		this.setPreco(preco);
+		
 	}
 
 	public Produto() {
@@ -52,6 +61,8 @@ public class Produto {
 	public void setQtdEstoque( int qtdEstoque) {
 		this.qtdEstoque = qtdEstoque;
 	}
+	
+
 	
 	public String getNome() {
 		return nome;
@@ -94,10 +105,37 @@ public class Produto {
 		this.dataCadastro = dataAtual.toString(fmt);
 	}
 
+	public String getDescricao() {
+		return descricao;
+	}
 
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
+	public String getFabricante() {
+		return fabricante;
+	}
 
+	public void setFabricante(String fabricante) {
+		this.fabricante = fabricante;
+	}
 
+	public String getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(String fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
+	public String getCnpjFornecedor() {
+		return cnpjFornecedor;
+	}
+
+	public void setCnpjFornecedor(String cnpjFornecedor) {
+		this.cnpjFornecedor = cnpjFornecedor;
+	}
 
 
 	// equals e tostring omitidos. Cliado na aula de 05/04/2022

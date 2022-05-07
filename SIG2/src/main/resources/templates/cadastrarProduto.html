@@ -30,13 +30,60 @@
 					<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
 						<div class="row">
 							<div class="form-group col-md-4">
-								<label for="cpf" class="col-form-label">Nome do Produto</label>
+								<label for="nome" class="col-form-label">Nome do Produto</label>
 								<input type="text" th:field="*{nome}" class="form-control" id="nome"
 									placeholder="Nome Produto">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
 							</div>
+							
 						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="descricao" class="col-form-label">Descrição</label>
+								<input type="text" th:field="*{descricao}" class="form-control" id="descricao"
+									placeholder="Descrição de Produto">
+								<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"
+									class="text-danger">
+								</span>
+							</div>
+						</div>
+						
+						<div class="row">
+								<div class="form-group col-md-4">
+									<label for="fabricante" class="col-form-label">Fabricante</label>
+									<input type="text" th:field="*{fabricante}" class="form-control" id="fabricante"
+										placeholder="Digite o nome do Fabricante">
+									<span th:if="${#fields.hasErrors('fabricante')}" th:errors="*{fabricante}"
+										class="text-danger">
+									</span>
+								</div>
+							</div>
+							
+
+							
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="fornecedor" class="col-form-label">Fornecedor</label>
+								<input type="text" th:field="*{fornecedor}" class="form-control" id="descricao"
+									placeholder="Digite o nome do Fornecedor">
+								<span th:if="${#fields.hasErrors('fornecedor')}" th:errors="*{fornecedor}"
+									class="text-danger">
+								</span>
+							</div>
+						</div>
+
+						<div class="row">
+								<div class="form-group col-md-4">
+									<label for="fabricante" class="col-form-label">CNPJ do Fornecedor</label>
+									<input type="text" th:field="*{cnpjFornecedor}" class="form-control" id="cnpjFornecedor"
+										placeholder="Digite o CNPJ do Fornecedor">
+									<span th:if="${#fields.hasErrors('cnpjFornecedor')}" th:errors="*{cnpjFornecedor}"
+										class="text-danger">
+									</span>
+								</div>
+							</div>
+
 						<div class="row">
 							<div class="form-group col-md-8">
 								<label for="nome" class="col-form-label">Preço do Produto</label>
@@ -65,7 +112,7 @@
 									class="text-danger">
 								</span>
 							</div>
-							
+
 						</div>
 						<div class="form-group col-md-8">
 							<input type="submit" class="btn btn-primary" value="Cadastrar Produto">
