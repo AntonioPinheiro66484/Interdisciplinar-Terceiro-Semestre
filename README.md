@@ -31,18 +31,18 @@ O projeto de software é iniciado logo que os requisitos de software tenham sido
 | Codificação |Será considerada concluída quando a análise de rastreabilidade entre o código e as funções solicitadas no documento de requisitos não identificarem inconsistências   |
 | Teste | Será considerada concluída quando 100% dos casos de teste prioritários (complexidade, funções mais utilizadas) rastreáveis para os requisitos obtiverem satisfatório   |
 
-##### Estudo de Caso - SIG de Vendas e Suprimentos
+##### Estudo de Caso - SIG2 de Vendas de Produtos Eletronicos, Consoles, Games e Periféricos.
 ##### Concepção - análise de requisitos
 
 > Considere que uma organização está iniciando um projeto para implantar um Sistema Integrado de Gestão de Vendas e Suprimentos. 
-Os seguintes requisitos foram identificados na primeira reunião com o cliente (RU – Requisito de Usuário). 
+Os seguintes requisitos foram identificados na primeira reunião com o cliente e produto (RU – Requisito de Usuário). 
 
 - RU01 - Compras - Registra e acompanha os processos de compras na organização, prevê a entrega programada de pedidos de compra
 - RU02 - Recebimento - Registra, controla e informa sobre a entrada de mercadorias e integra as informações dos dados da nota fiscal de entrada com o estoque 
 - RU03 - Vendas – Registra e acompanha as vendas mantendo as informações integradas com o controle de estoque. 
 
 
-> Cada requisito tem um identificador único de maneira que seja possível rastrear a necessidade do cliente com a implementação do software. A prioridade é estabelecida considerando o risco de falha. Quanto mais complexa uma função maior é o risco de falha (alto, médio ou baixo). Perfil operacional de uso - quanto mais utilizada for uma função maior será o impacto em uma falha.
+> Cada requisito tem um identificador único de maneira que seja possível rastrear a necessidade do cliente e produto com a implementação do software. A prioridade é estabelecida considerando o risco de falha. Quanto mais complexa uma função maior é o risco de falha (alto, médio ou baixo). Perfil operacional de uso - quanto mais utilizada for uma função maior será o impacto em uma falha.
 
 | Identificador | Descrição | Prioridade |
 | ------------ | ------------------------------------------------------------------------ | ------| 
