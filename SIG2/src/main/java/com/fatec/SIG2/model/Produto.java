@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -21,13 +22,19 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@NotBlank(message = "Nome é requerido")
+	@NotBlank(message = "Nome é requerido!")
 	private String nome;
+	@NotBlank(message = "Descrição é requerida!")
 	private String descricao;
+	@NotBlank(message = "Nome do fabricante é requirido!")
 	private String fabricante;
+	@NotBlank(message = "Nome do fornecedor é requirido!")
 	private String fornecedor;
+	@NotBlank(message = "CNPJ do fornecedor é requirido!")
 	private String cnpjFornecedor;
+	@NotNull(message = "Quantidade do estoque é requirido!")
 	private int qtdEstoque;
+	@NotNull(message = "Digite o Preço do produto!")
 	private Double preco;
 	private String dataCadastro;
 
