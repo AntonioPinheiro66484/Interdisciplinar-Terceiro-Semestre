@@ -43,7 +43,7 @@
 }
 
 .side-banner {
-    background: url("images/side-banner.jfif") no-repeat center;
+    background: url("images/banner_img.jpg") no-repeat center;
     background-size: contain;
     min-width: 160px;
 }
