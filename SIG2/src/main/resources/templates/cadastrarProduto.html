@@ -18,8 +18,45 @@
 </head>
 
 <body>
-	<header th:replace="fragments/header :: menuSuperior">
-		<div>header</div>
+	<header class="section-header">
+		<nav class="navbar navbar-dark navbar-expand p-0 bg-dark">
+			<div class="container text-white">
+				<span>Acessibilidade</span>
+				<span>Leitura dinamica</span>
+			</div>
+		</nav>
+		<section class="header-main border-bottom border-5" style="background-color: #013030">
+			<div class="container">
+				<div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+					<div class="col-md-2 d-flex justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+
+						<a th:href="@{/}"><img th:src="@{/images/terencio.png}" width="100" alt="logo image"></a>
+
+					</div>
+					<div class="col-md-7">
+
+
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 d-flex justify-content-end">
+
+
+			</div>
+			</a>
+
+
+
+
+			</div>
+
+			</div>
+			</div>
+			</div>
+
+		</section>
+		</a>
 	</header>
 	<div class="container my-5">
 		<br />
@@ -36,7 +73,7 @@
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
 							</div>
-							
+
 						</div>
 						<div class="row">
 							<div class="form-group col-md-4">
@@ -48,20 +85,20 @@
 								</span>
 							</div>
 						</div>
-						
-						<div class="row">
-								<div class="form-group col-md-4">
-									<label for="fabricante" class="col-form-label">Fabricante</label>
-									<input type="text" th:field="*{fabricante}" class="form-control" id="fabricante"
-										placeholder="Digite o nome do Fabricante">
-									<span th:if="${#fields.hasErrors('fabricante')}" th:errors="*{fabricante}"
-										class="text-danger">
-									</span>
-								</div>
-							</div>
-							
 
-							
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="fabricante" class="col-form-label">Fabricante</label>
+								<input type="text" th:field="*{fabricante}" class="form-control" id="fabricante"
+									placeholder="Digite o nome do Fabricante">
+								<span th:if="${#fields.hasErrors('fabricante')}" th:errors="*{fabricante}"
+									class="text-danger">
+								</span>
+							</div>
+						</div>
+
+
+
 						<div class="row">
 							<div class="form-group col-md-4">
 								<label for="fornecedor" class="col-form-label">Fornecedor</label>
@@ -74,15 +111,15 @@
 						</div>
 
 						<div class="row">
-								<div class="form-group col-md-4">
-									<label for="fabricante" class="col-form-label">CNPJ do Fornecedor</label>
-									<input type="text" th:field="*{cnpjFornecedor}" class="form-control" id="cnpjFornecedor"
-										placeholder="Digite o CNPJ do Fornecedor">
-									<span th:if="${#fields.hasErrors('cnpjFornecedor')}" th:errors="*{cnpjFornecedor}"
-										class="text-danger">
-									</span>
-								</div>
+							<div class="form-group col-md-4">
+								<label for="fabricante" class="col-form-label">CNPJ do Fornecedor</label>
+								<input type="text" th:field="*{cnpjFornecedor}" class="form-control" id="cnpjFornecedor"
+									placeholder="Digite o CNPJ do Fornecedor">
+								<span th:if="${#fields.hasErrors('cnpjFornecedor')}" th:errors="*{cnpjFornecedor}"
+									class="text-danger">
+								</span>
 							</div>
+						</div>
 
 						<div class="row">
 							<div class="form-group col-md-8">
