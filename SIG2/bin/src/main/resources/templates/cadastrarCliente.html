@@ -4,10 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Cadastrar Produto</title>
+	<title>Cadastrar cliente</title>
 	<script type="text/javascript">
 		function consulta() {
-			window.open("/sig/produtos");
+			window.open("/sig/cliente");
 		}
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,17 +50,18 @@
 						</div>
 					</div>
 					<div class="col-3 d-flex justify-content-end">
-						<!--Link de Cadastrar produto-->
-						<a th:href="@{/sig/produtos}">
+						<!--Link de Cadastrar Cliente-->
+						<a th:href="@{/sig/clientes}">
 							<div
 								class="text-white flex-column align-items-center cursor-pointer animate-shadow animate-shadow-white p-2 d-none d-lg-flex text-center me-3">
-								<img th:src="@{/icons/squirrelanao.png}" width="30" alt="logo image"></a>
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-person-badge" viewBox="0 0 16 16">
 									<path
 										d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
 									<path
 										d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z" />
-								
-								Consultar Produto
+								</svg>
+								Consultar Cliente
 							</div>
 						</a>
 					</div>
@@ -70,108 +71,74 @@
 			</div>
 		</section>
 	</header>
+
 	<div class="container my-5">
 		<br />
-		<h3>Cadastrar Produto</h3>
+		<h3>Cadastrar cliente</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
-					<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
+					<form action="#" th:action="@{/sig/clientes}" th:object="${cliente}" method="post">
 						<div class="row">
 							<div class="form-group col-md-4">
-								<label for="nome" class="col-form-label">Nome do Produto</label>
-								<input type="text" th:field="*{nome}" class="form-control" id="nome"
-									placeholder="Nome Produto">
+								<label for="cpf" class="col-form-label">CPF</label>
+								<input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="CPF">
+								<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="text-danger">
+								</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="nome" class="col-form-label">Nome</label>
+								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 								</span>
 							</div>
-
 						</div>
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="descricao" class="col-form-label">Descrição</label>
-								<input type="text" th:field="*{descricao}" class="form-control" id="descricao"
-									placeholder="Descrição de Produto">
-								<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="fabricante" class="col-form-label">Fabricante</label>
-								<input type="text" th:field="*{fabricante}" class="form-control" id="fabricante"
-									placeholder="Digite o nome do Fabricante">
-								<span th:if="${#fields.hasErrors('fabricante')}" th:errors="*{fabricante}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-
-
-
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="fornecedor" class="col-form-label">Fornecedor</label>
-								<input type="text" th:field="*{fornecedor}" class="form-control" id="descricao"
-									placeholder="Digite o nome do Fornecedor">
-								<span th:if="${#fields.hasErrors('fornecedor')}" th:errors="*{fornecedor}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="fabricante" class="col-form-label">CNPJ do Fornecedor</label>
-								<input type="text" th:field="*{cnpjFornecedor}" class="form-control" id="cnpjFornecedor"
-									placeholder="Digite o CNPJ do Fornecedor">
-								<span th:if="${#fields.hasErrors('cnpjFornecedor')}" th:errors="*{cnpjFornecedor}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="nome" class="col-form-label">Preço do Produto</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="nome"
-									placeholder="Preço do Produto">
-								<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-danger">
+								<label for="dataNascimento" class="col-form-label">Data Nascimento</label>
+								<input type="text" th:field="*{dataNascimento}" class="form-control" id="dataNascimento"
+									placeholder="Data Nascimento">
+								<span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"
+									class="text-danger">
+								</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-2">
+								<label for="dataNascimento" class="col-form-label">Sexo</label>
+								<input type="text" th:field="*{sexo}" class="form-control" id="sexo" placeholder="M/F/O">
+								<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="text-danger">
 								</span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="dataNascimento" class="col-form-label">Data de Cadastro do Produto</label>
-								<input type="text" th:field="*{dataCadastro}" class="form-control" id="dataCadastro"
-									placeholder="Data Cadastro">
-								<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
-									class="text-danger">
-								</span>
+								<label for="cep" class="col-form-label">CEP</label>
+								<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="CEP">
+								<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
-								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
-									placeholder="qtdEstoque">
-								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}"
-									class="text-danger">
-								</span>
+								<label for="complemento" class="col-form-label">Complemento</label>
+								<input type="text" th:field="*{complemento}" class="form-control" id="complemento"
+									placeholder="Complemento numero/apto">
+								<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
+									class="text-danger"></span>
 							</div>
-
 						</div>
 						<div class="form-group col-md-8">
-							<input type="submit" class="btn btn-primary" value="Cadastrar Produto">
+							<input type="submit" class="btn btn-primary" value="Cadastrar-se">
 						</div>
 					</form>
 				</div>
 			</div>
 			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
-		
+
+
 </body>
 
 </html>
