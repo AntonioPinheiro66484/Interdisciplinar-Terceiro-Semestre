@@ -3,10 +3,10 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Objects;
+import java.util.Random;
+
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -14,39 +14,65 @@ import org.hibernate.validator.constraints.br.CPF;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-@Entity
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+@Document(collection="Cliente")
 public class Cliente {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Field
 	@NotBlank(message = "Nome é requerido")
 	private String nome;
 	@Pattern(regexp = "^(0?[1-9]|[12][0-9]|3[01])[\\/-](0?[1-9]|1[012])[\\/-]\\d{4}$", message = "A data de vencimento deve estar no formato dd/MM/YYYY")
 	// https://www.regular-expressions.info/
+	@Field
 	private String dataNascimento;
+	@Field
 	private String dataCadastro;
+	@Field
 	private String sexo;
 	@CPF
 	@Column(unique = true) // nao funciona com @Valid tem que tratar na camada de persistencia
+	@Field
 	private String cpf;
 	@NotBlank(message = "O CEP é obritatório.")
+	@Field
 	private String cep;
+	@Field
 	private String endereco;
 	@NotBlank(message = "O complemento deve ser informado")
+	
 	private String complemento;
 
 	public Cliente(String nome, String dataNascimento, String sexo, String cpf, String cep, String complemento) {
-		this.nome = nome;
-		setDataNascimento(dataNascimento);
-		this.sexo = sexo;
-		this.cpf = cpf;
-		this.cep = cep;
-		this.complemento = complemento;
-	}
 
-	public Cliente() {
+        Random rand = new Random();
 
-	}
+        this.id = rand.nextLong();
+
+        this.nome = nome;
+
+        setDataNascimento(dataNascimento);
+
+        this.sexo = sexo;
+
+        this.cpf = cpf;
+
+        this.cep = cep;
+
+        this.complemento = complemento;
+
+    }
+
+
+
+    public Cliente() {
+
+        Random rand = new Random();
+
+        this.id = rand.nextLong();
+
+    }
 
 	public Long getId() {
 		return id;
