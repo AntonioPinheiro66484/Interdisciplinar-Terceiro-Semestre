@@ -13,12 +13,21 @@
 </head>
 <body>
 <header class="section-header">
-    <nav class="navbar navbar-dark navbar-expand p-0 bg-dark">
-        <div class="container text-white">
-            <span>Acessibilidade</span>
-            <span></span>
+    <div id="acessibilidade"><!--Barra de Acessibilidade-->
+            <ul id="atalhos">
+                <!--Atalhos-->
+                <li><a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteúdo [1]</a></li>
+                <li><a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a></li>
+                <li><a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodapé [3]</a></li>
+            
+                <!--Acess e Contraste-->
+                <li id="pgacess"><a href="acessibilidade.html" title="Ir para a página de Acessibilidade">ACESSIBILIDADE</a></li>
+                <li class="contraste"><a href="#" title="Contraste Preto">CONTRASTE PRETO</a></li>
+                <li class="contraste" ><a href="#" title="Sem Contraste">SEM CONTRASTE</a></li>
+                <li class="fonte"><a href="#" title="Aumentar a fonte">A+</a></li>
+                <li class="fonte"><a href="#" title="Diminuir a fonte">A-</a></li>
+            </ul>
         </div>
-    </nav>
     <section class="header-main border-bottom border-5" style="background-color: #013030">
         <div class="container">
             <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
@@ -95,7 +104,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <a class="navbar-brand text-white fw-bold d-none d-lg-block" href="#">Squirrel Tech</a>
-                <ul class="navbar-nav">
+                <ul id="menu" class="navbar-nav">
                     <li class="nav-item dropdown">
                       <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
@@ -182,7 +191,7 @@
 </div>
 <!--FIM CAROUSEL-->
 <!--INICIO BODY-->
-<div class="container py-4">
+<div id="conteudo"class="container py-4">
     <div class="d-flex">
         <div>
             <div class="row">
@@ -273,7 +282,7 @@
 <!--FIM BODY-->
 
 
-<footer class="rodape">
+<footer id="rodape">
     <div class="container pt-5 pb-3">
         <div class="row">
             <div class="col-sm">
