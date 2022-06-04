@@ -17,12 +17,23 @@
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <header class="section-header">
-		<nav class="navbar navbar-dark navbar-expand p-0 bg-dark">
-			<div class="container text-white">
-				<span>Acessibilidade</span>
-				<span>Leitura dinamica</span>
-			</div>
-		</nav>
+	<div id="acessibilidade">
+			<!--Barra de Acessibilidade-->
+			<ul id="atalhos">
+				<!--Atalhos-->
+				<li><a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteúdo [1]</a>
+				</li>
+				<li><a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a></li>
+				<li><a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodapé [3]</a></li>
+
+				<!--Acess e Contraste-->
+				<li id="pgacess"><a th:href="@{/sig/acessibilidade}"title="Ir para a página de Acessibilidade">ACESSIBILIDADE</a></li>
+				<li class="contraste"><a href="#" title="Contraste Preto">CONTRASTE PRETO</a></li>
+				<li class="contraste"><a href="#" title="Sem Contraste">SEM CONTRASTE</a></li>
+				<li class="fonte"><a href="#" title="Aumentar a fonte">A+</a></li>
+				<li class="fonte"><a href="#" title="Diminuir a fonte">A-</a></li>
+			</ul>
+		</div>
 		<section class="header-main border-bottom border-5" style="background-color: #013030">
 			<div class="container">
 				<div class="row p-2 pt-3 pb-3 d-flex align-items-center">
