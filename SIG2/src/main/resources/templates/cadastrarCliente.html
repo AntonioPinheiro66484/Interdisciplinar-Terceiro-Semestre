@@ -80,8 +80,11 @@
 			<div class="col-3 d-flex justify-content-end">
 			</div>
 		</section>
-	</header>
 
+	</header>
+	<header th:replace="fragments/header :: menuSuperior">
+		<div>header</div>
+	</header>
 	<div class="container my-5">
 		<br />
 		<h3>Cadastrar cliente</h3>

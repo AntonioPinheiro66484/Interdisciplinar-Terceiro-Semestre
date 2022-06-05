@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Squirrel Tech</title>
+</head>
+
+<body>
+	<header class="section-header">
+		<div id="acessibilidade">
+			<!--Barra de Acessibilidade-->
+			<ul id="atalhos">
+				<!--Atalhos-->
+				<li><a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteúdo [1]</a>
+				</li>
+				<li><a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a></li>
+				<li><a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodapé [3]</a></li>
+
+				<!--Acess e Contraste-->
+				<li id="pgacess"><a th:href="@{/acessibilidade/acessibilidade.html}"title="Ir para a página de Acessibilidade">ACESSIBILIDADE</a></li>
+				<li class="contraste"><a href="acessibilidade.html" title="Contraste Preto">CONTRASTE PRETO</a></li>
+				<li class="contraste"><a href="#" title="Sem Contraste">SEM CONTRASTE</a></li>
+				<li class="fonte"><a href="#" title="Aumentar a fonte">A+</a></li>
+				<li class="fonte"><a href="#" title="Diminuir a fonte">A-</a></li>
+			</ul>
+		</div>
+		<section class="header-main border-bottom border-5" style="background-color: #013030">
+			<div class="container">
+				<div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+					<div class="col-md-2 d-flex justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+						<a href="#">
+							<img src="acessibilidade/superterencio.png" width="100" alt="logo image">
+						</a>
+					</div>
+					<div class="col-md-7">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar..."
+								aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<a href="busca.html">
+									<button class="btn btn-outline-secondary" type="button">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+											<path
+												d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+										</svg>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+	
+
+
+		<div vw class="enabled">
+			<div vw-access-button class="active"></div>
+			<div vw-plugin-wrapper>
+				<div class="vw-plugin-top-wrapper"></div>
+			</div>
+		</div>
+		<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+		<script>
+			new window.VLibras.Widget('https://vlibras.gov.br/app');
+		</script>
+
+
+</header>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+
+
+</body>
+<h1>Pagina de Acessibilidade</h1>
+
+<p>ACESSIBILIDADE
+<br>Este site foi desenvolvido para que pessoas com deficiência visual, baixa visão, daltonismo, deficiência auditiva e mobilidade reduzida possam navegar por meio de recursos como alto contraste, aumento de fonte, teclas de atalho, tradução para a Língua Brasileira de Sinais e navegação por teclado.</br>
+
+<br>Para aumentar a fonte, é só clicar no símbolo de A+ em nossa barra de acessibilidade. Caso queira voltar ao tamanho de fonte original, é só clicar em A-.</br>
+
+<br>Se for necessário, você também pode usar o zoom nativo do seu navegador, pressionando as teclas “Ctrl” e “+” para aumentar todo o site e “Ctrl” e “-“ para diminuir. Para voltar ao padrão, pressione “Ctrl” e “0”.</br>
+
+<br>Este site tem melhor acessibilidade quando acessado nas versões mais atualizadas do seu navegador web. Utilize sempre a versão mais recente de seu software.</br>
+
+<br>Teclas de atalho por navegadores</br>
+
+<br>Internet Explorer e Google Chrome:</br>
+
+<br>“Alt” + “1” - ir para o conteúdo</br>
+
+<br>“Alt” + “2” - ir para o menu</br>
+
+<br>“Alt” + “3” - ir para o rodapé</br>
+
+<br>Firefox:</br>
+
+<br>“Alt” + “Shift” + “número”</br>
+
+<br>Opera:</br>
+
+<br>“Shift” + “Escape” + “número”</br>
+
+<br>Safari e OmniWeb:</br>
+
+<br>“Ctrl” + “número”</br>
+
+<br>Navegação por tabulação</br>
+
+<br>Use a tecla Tab para navegar por elementos que recebem ação do usuário no site, tais como links, botões, campos de formulário e outros na ordem em que eles são apresentados na página, e Shift + Tab para retornar. Use as setas direcionais para acessar as informações textuais.</br>
+
+<br>Sugestões de programas disponíveis para pessoas com deficiência</br>
+
+<br>- Nitrous Voice Flux: controla o computador por voz. Gratuito;</br>
+
+<br>- NVDA: software livre para ler tela – vários idiomas (Windows);</br>
+
+<br>- YeoSoft Text: leitor de tela em inglês e português;</br>
+
+<br>- Jaws for Windows: leitor de tela – vários idiomas;</br>
+
+<br>- Virtual Vision: leitor de telas em português do Brasil;</br>
+
+<br>- DOSVOX: sistema para deficientes visuais (Windows ou Linux).</br>
+
+<br>- Talckback: leitor de tela disponível em smartphones Android.</br>
+
+<br>Observação: leia no manual do leitor de telas sobre a melhor forma de navegação em páginas web.</br>
+
+<br>LIBRAS - Língua Brasileira de Sinais</br>
+
+<br>Este site é acessível em LIBRAS através do VLibras.</br>
+
+<br>-Do lado direito de cada página do site existe o ícone de um Widget informando que o site é acessível em LIBRAS.</br>
+
+<br>-Para traduzir, basta clicar sobre o ícone e selecionar o texto que deseja traduzir.</br>
+
+</html>
