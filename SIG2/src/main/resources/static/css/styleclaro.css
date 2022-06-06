@@ -438,3 +438,24 @@ a{
 	color:#FFFF;
 	text-decoration: none;
 }
+#titulo-pag-acess{
+    font-size: 24pt;
+    text-align: center;
+}
+#conteudo{
+    width: 100%;
+    min-height: 500px;
+}
+.paragrafo1{
+    
+    font-size: 15pt;
+    text-align: justify;
+    padding-left: 1%;
+    padding-top: 2%;
+}
+.paragrafo{
+   
+    font-size: 15pt;
+    text-align: justify;
+    padding-left: 1%;
+}
