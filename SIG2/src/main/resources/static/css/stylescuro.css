@@ -6,6 +6,10 @@
     margin: 5px;
 }
 
+#background{
+	background:color(black);
+}
+
 .animate-shadow {
     transition: box-shadow 0.3s ease-in-out;
     border-radius: 12px;
@@ -27,8 +31,8 @@
 .product-title {
     font-size: 16px;
     max-width: 100%;
-    color: #404040;
-    font-weight: 400;
+    color: white;
+    font-weight: 15px;
     margin: 10px 15px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -39,7 +43,7 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    color: #404040;
+    color: white;
 }
 
 .side-banner {
@@ -49,35 +53,35 @@
 }
 
 #produto-1 {
-    background: url("images/produto-1.jfif") no-repeat center #FFFFFF;
+    background: url("images/produto-1.jfif") no-repeat center black;
 }
 
 #produto-2 {
-    background: url("images/produto-2.jfif") no-repeat center #FFFFFF;
+    background: url("images/produto-2.jfif") no-repeat center black;
 }
 
 #produto-3 {
-    background: url("images/produto-3.jfif") no-repeat center #FFFFFF;
+    background: url("images/produto-3.jfif") no-repeat center black;
 }
 
 #produto-4 {
-    background: url("images/produto-4.jfif") no-repeat center #FFFFFF;
+    background: url("images/produto-4.jfif") no-repeat center black;
 }
 
 #produto-5 {
-    background: url("images/produto-5.jfif") no-repeat center #FFFFFF;
+    background: url("images/produto-5.jfif") no-repeat center black;
 }
 
 #produto-6 {
-    background: url("images/produto-6.jfif") no-repeat center #FFFFFF;
+    background: url("images/produto-6.jfif") no-repeat center black;
 }
 
 #produto-7 {
-    background: url("images/produto-7.jfif") no-repeat center #FFFFFF;
+    background: url("images/produto-7.jfif") no-repeat center black;
 }
 
 #produto-8 {
-    background: url("images/produto-8.jfif") no-repeat center #FFFFFF;
+    background: url("images/produto-8.jfif") no-repeat center black;
 }
 
 .cursor-pointer {
@@ -94,7 +98,7 @@
 
 .form-inputs .form-control:focus {
     box-shadow: none;
-    border: 1px solid #000
+    border: 1px solid #FFF
 }
 
 .form-inputs i {
@@ -104,7 +108,7 @@
 }
 
 .shop-bag {
-    background-color: #000;
+    background-color: #FFF;
     color: #fff;
     height: 50px;
     width: 50px;
@@ -192,7 +196,7 @@
 }
 @media(max-width:1240px){
     #pgacess{
-        padding-left: 24%;
+        padding-left: 22%;
         display:flex;
     }
 }

@@ -14,5 +14,10 @@ public class GUIMenuController {
 	public ModelAndView home() {
 		return new ModelAndView("paginaMenu");
 	}
+	
+	@GetMapping("/acessibilidade")
+	public ModelAndView acess() {
+		return new ModelAndView("acessibilidade");
+	}
 }
 
