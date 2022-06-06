@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link rel="stylesheet" th:href="@{/css/stylescuro.css}">
+<link rel="stylesheet" th:href="@{/css/styleclaro.css}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 	integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,41 +15,17 @@
 	<header class="section-header">
 		<div id="acessibilidade">
 			<ul id="atalhos">
-				<li>
-					<a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
-				</li>
-				<li>
-					<a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a>
-				</li>
-				<li>
-					<a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a>
-				</li>
-			</ul>
-
-			<ul id="atalhos2">
-				<li>
-					<a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a>
-				</li>
-
-
-				<li>
-					<a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a>
-				</li>
-
-				<li>
-					<a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a>
-				</li>
-
-				<li>
-					<a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a>
-				</li>
-
-				<li>
-					<a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a>
-				</li>
+				<li><a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a></li>
+				<li><a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a></li>
+				<li><a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a></li>
+				
+				<li id="pgacess"><a th:href="@{/acessibilidade}" title="Ir para pagina de acessabilidade">Acessibilidade</a></li>
+				<li class="contraste"><a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a></li>
+				<li class="contraste"><a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a></li>
+				<li class="fonte"><a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a></li>
+				<li class="fonte"><a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a></li>
 			</ul>
 		</div>
-
 
 		<section class="header-main border-bottom border-5" style="background-color: #013030">
 			<div class="container">

@@ -17,26 +17,24 @@
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" th:href="@{/css/styleclaro.css}">
 </head>
 
 <body>
 	<header class="section-header">
-	<div id="acessibilidade">
-			<!--Barra de Acessibilidade-->
+		<div id="acessibilidade">
 			<ul id="atalhos">
-				<!--Atalhos-->
-				<li><a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteúdo [1]</a>
+				<li><a href="#conteudo" accesskey="1" title="Ir diretamente para o conteúdo">Ir para o conteudo [1]</a>
 				</li>
 				<li><a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a></li>
-				<li><a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodapé [3]</a></li>
+				<li><a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a></li>
 
-				<!--Acess e Contraste-->
-				<li id="pgacess"><a th:href="@{/sig/acessibilidade}"title="Ir para a página de Acessibilidade">ACESSIBILIDADE</a></li>
-				<li class="contraste"><a href="#" title="Contraste Preto">CONTRASTE PRETO</a></li>
-				<li class="contraste"><a href="#" title="Sem Contraste">SEM CONTRASTE</a></li>
-				<li class="fonte"><a href="#" title="Aumentar a fonte">A+</a></li>
-				<li class="fonte"><a href="#" title="Diminuir a fonte">A-</a></li>
+				<li id="pgacess"><a th:href="@{/acessibilidade}"
+						title="Ir para pagina de acessabilidade">Acessibilidade</a></li>
+				<li class="contraste"><a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a></li>
+				<li class="contraste"><a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a></li>
+				<li class="fonte"><a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a></li>
+				<li class="fonte"><a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a></li>
 			</ul>
 		</div>
 		<section class="header-main border-bottom border-5" style="background-color: #013030">
@@ -67,17 +65,17 @@
 						<a th:href="@{/scv/pedido}">
 							<div
 								class="text-white flex-column align-items-center cursor-pointer animate-shadow animate-shadow-white p-2 d-none d-lg-flex text-center me-3">
-								<img th:src="@{/icons/squirrelanao.png}" width="30" alt="logo image"></a>
-									<path
-										d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-									<path
-										d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z" />
-								
-								Consultar Pedido
-							</div>
+								<img th:src="@{/icons/squirrelanao.png}" width="30" alt="logo image">
 						</a>
+						<path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+						<path
+							d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z" />
+
+						Consultar Pedido
 					</div>
+					</a>
 				</div>
+			</div>
 			</div>
 			<div class="col-3 d-flex justify-content-end">
 			</div>
@@ -129,6 +127,25 @@
 		</div>
 		<h6 th:text="${message}" class="text-danger"></h6>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<script th:src="@{/js/fonte.js}"></script>
+
+<script th:src="@{/js/botao.js}"></script>
+
+<script th:src="@{/js/contraste.js}"></script>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script>
+
+	new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+</script>
