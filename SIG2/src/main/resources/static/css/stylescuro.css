@@ -6,8 +6,8 @@
     margin: 5px;
 }
 
-#background{
-	background:color(black);
+#body{
+	background-color:(000);
 }
 
 .animate-shadow {
@@ -20,7 +20,7 @@
 }
 
 .animate-shadow-white:hover {
-    box-shadow: rgb(255, 255, 255) 0 5px 15px;
+    box-shadow: rgb(0, 0, 0) 0 5px 15px;
 }
 
 .product-image {

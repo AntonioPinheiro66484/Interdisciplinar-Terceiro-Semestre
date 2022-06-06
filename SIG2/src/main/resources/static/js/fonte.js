@@ -13,6 +13,7 @@ $(document).ready(function(){
             $('header').css({'font-size': fonte+ 'px'});
             $('option').css({'font-size': fonte+ 'px'});
             $('select').css({'font-size': fonte+ 'px'});
+            $('li').css({'font-size': fonte+ 'px'});
             // $('#acessibilidade').css({'font-size': fonte+'px'});
             // $('#desenvolvedoresFoot').css({'font-size': fonte+'px'});
         }
@@ -30,6 +31,7 @@ $(document).ready(function(){
             $('header').css({'font-size': fonte+ 'px'});
             $('option').css({'font-size': fonte+ 'px'});
             $('select').css({'font-size': fonte+ 'px'});
+            $('li').css({'font-size': fonte+ 'px'});
             // $('#acessibilidade').css({'font-size': fonte+'px'});
             // $('#desenvolvedoresFoot', 'p').css({'font-size': fonte+'px'});
         }
