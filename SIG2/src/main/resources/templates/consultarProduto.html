@@ -24,13 +24,19 @@
 				</li>
 				<li><a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a></li>
 				<li><a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a></li>
-
+			</ul>
+			<ul id="atalhos2">
 				<li id="pgacess"><a th:href="@{/acessibilidade}"
 						title="Ir para pagina de acessabilidade">Acessibilidade</a></li>
-				<li class="contraste"><a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a></li>
-				<li class="contraste"><a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a></li>
+				<button onclick="myFunction()">Toggle dark mode</button>
 				<li class="fonte"><a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a></li>
 				<li class="fonte"><a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a></li>
+				<script>
+					function myFunction() {
+						var element = document.body;
+						element.classList.toggle("dark-mode");
+					}
+				</script>
 			</ul>
 		</div>
 		<section class="header-main border-bottom border-5" style="background-color: #013030">

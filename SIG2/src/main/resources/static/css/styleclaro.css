@@ -34,9 +34,9 @@ font-family: 'Open Sans', sans-serif;
 }
 
 .product-title {
+	color: #404040;
     font-size: 16px;
     max-width: 100%;
-    color: #404040;
     font-weight: 400;
     margin: 10px 15px;
     text-overflow: ellipsis;
@@ -45,10 +45,10 @@ font-family: 'Open Sans', sans-serif;
 }
 
 .product-price {
+	color: #404040;
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    color: #404040;
 }
 
 .side-banner {
@@ -170,14 +170,17 @@ font-family: 'Open Sans', sans-serif;
     margin-top: 4%;
 }
 #acessibilidade{
-    width: AUTO;
+    width: 100%;
     height: AUTO;
+    float:left;
     background-color: #171616;
-   display: block;     
+    /*display: block;*/     
 }
 #atalhos{
     list-style: none;
     font: Verdana;
+    display: inline;
+    float:left;
     font-size: 1em;
    	padding-left: 1%;
    	margin-bottom:0%;
@@ -186,7 +189,27 @@ font-family: 'Open Sans', sans-serif;
 #atalhos li{
     display: inline;
 }
-#pgacess{
+#atalhos2{
+    list-style: none;
+    font: Verdana;
+    float: right;
+    display: inline;
+    font-size: 1em;
+   	margin-right: 1%;
+   	margin-bottom:0%;
+}
+
+#atalhos2 li{
+    display: inline;
+}
+
+body{
+	background: #fafafa;
+}
+body.dark-mode {
+	background-color: #212529;
+}
+/*#pgacess{
     padding-left: 38%;
 }
 .contraste{
@@ -194,8 +217,8 @@ font-family: 'Open Sans', sans-serif;
 }
 .fonte{
     padding-left: 1%;
-}
-@media(max-width:1317px){
+}*/
+/*@media(max-width:1317px){
     #pgacess{
         padding-left: 26%;
         display:flex;
@@ -433,7 +456,7 @@ font-family: 'Open Sans', sans-serif;
    	margin-bottom:0%;
 }  
 }
-}
+}*/
 a{
 	color:#FFFF;
 	text-decoration: none;
