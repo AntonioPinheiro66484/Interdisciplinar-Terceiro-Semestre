@@ -12,18 +12,20 @@ body {
 }
 
 .container-form {
-    width: 80%;
+    width: 100%;
     height: 80vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top:6%;
 }
 
-h3{
-    align-items: center;
+h1{
+    color:white;
 }
 
 .form {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,34 +35,18 @@ h3{
 
 }
 
+h3{
+    align-items: center;
+    text-align: center;
+    color:white;
+    
+}
 .form-header {
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
 }
 
-.login-button {
-    display: flex;
-    align-items: center;
-}
-
-.login-button button {
-    border: none;
-    background-color: #179a9a;;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-button button:hover {
-    background-color: #03444d4d;
-}
-
-.login-button button a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #fff;
-}
 
 .form-header h1::after {
     content: '';
@@ -111,54 +97,21 @@ h3{
 .gender-title h6 {
     font-size: 0.75rem;
     font-weight: 600;
-    color: #000000c0;
+    color: white;
 }
 
 .input-box input::placeholder {
     color: #000000be;
-}
-
-.gender-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0 .5rem;
-}
-
-.gender-input {
-    display: flex;
     align-items: center;
 }
 
-.gender-input input {
-    margin-right: 0.35rem;
-}
-
-.gender-input label {
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #000000c0;
-}
-
-.continue-button button {
+.botaocadastro input-box{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin:auto;
     width: 100%;
-    margin-top: 2.5rem;
-    border: none;
-    background-color: #179a9a;;
-    padding: 0.62rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.continue-button button:hover {
-    background-color: #6b63fff1;
-}
-
-.continue-button button a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #179a9a;;
 }
 
 @media screen and (max-width: 1330px) {

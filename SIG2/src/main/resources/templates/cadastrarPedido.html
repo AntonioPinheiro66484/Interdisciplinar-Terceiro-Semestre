@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Cadastrar Livro</title>
+	<title>Cadastrar Pedido</title>
 	<script type="text/javascript" th:src="@{/js/actions.js}"></script>
 	<script type="text/javascript">
 		function consulta() {
@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" th:href="@{/css/styleclaro.css}">
+	<link rel="stylesheet" th:href="@{/css/styleforms.css}">
 </head>
 
 <body>
@@ -90,48 +91,44 @@
 	<header th:replace="fragments/header :: menuSuperior">
 		<div>header</div>
 	</header>
-	<div class="container my-5">
-		<br />
-		<h3>Fazer Pedido</h3>
-		<div class="card">
-			<div class="card-body">
-				<div class="col-md-8">
-					<form action="#" th:action="@{/scv/pedidos}" th:object="${umPedido}" method="post">
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="CPF" class="col-form-label">CPF</label>
-								<input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="cpf">
-								<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="textdanger">
-								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="produtoId" class="col-form-label">Código Produto</label>
-								<input type="text" th:field="*{produtoId}" class="form-control" id="produtoId"
-									placeholder="Código Produto">
-								<span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}"
-									class="textdanger"> </span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="quantidade" class="col-form-label">Quantidade</label>
-								<input type="text" th:field="*{quantidade}" class="form-control" id="quantidade"
-									placeholder="Quantidade"> <span th:if="${#fields.hasErrors('quantidade')}"
-									th:errors="*{quantidade}" class="text-danger"></span>
-							</div>
-							<div class="form-group col-md-8">
-								<input type="submit" class="btn btn-primary" value="Cadastrar Pedido">
 
-							</div>
+	<h3>Fazer Pedido</h3>
 
-						</div>
-					</form>
+	<div class="input-group">
+		<form action="#" th:action="@{/scv/pedidos}" th:object="${umPedido}" method="post">
+			<div class="row">
+				<div class="input-box">
+					<label for="CPF" class="col-form-label">CPF</label>
+					<input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="cpf">
+					<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="textdanger">
+					</span>
 				</div>
 			</div>
-		</div>
-		<h6 th:text="${message}" class="text-danger"></h6>
+			<div class="row">
+				<div class="input-box">
+					<label for="produtoId" class="col-form-label">Código Produto</label>
+					<input type="text" th:field="*{produtoId}" class="form-control" id="produtoId"
+						placeholder="Código Produto">
+					<span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}" class="textdanger">
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-box">
+					<label for="quantidade" class="col-form-label">Quantidade</label>
+					<input type="text" th:field="*{quantidade}" class="form-control" id="quantidade"
+						placeholder="Quantidade"> <span th:if="${#fields.hasErrors('quantidade')}"
+						th:errors="*{quantidade}" class="text-danger"></span>
+				</div>
+				<div class="button-cadastrar">
+					<input type="submit" class="btn btn-primary" value="Cadastrar Pedido">
+				</div>
+
+			</div>
+		</form>
+	</div>
+	</div>
+	<h6 th:text="${message}" class="text-danger"></h6>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
