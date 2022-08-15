@@ -7,6 +7,7 @@ padding: 0;
 font-family: 'Open Sans', sans-serif;
 
 }
+
 .product-card {
     height: 300px;
     flex: 1 0 21%;
@@ -208,6 +209,8 @@ body{
 }
 body.dark-mode {
 	background-color: #212529;
+    color:white;
+    
 }
 /*#pgacess{
     padding-left: 38%;

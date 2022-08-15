@@ -102,14 +102,11 @@
 </div>
 <div class="container-form"><br />
 	<!--Titulo-->
-
-
-	<div class="input-group">
-
+	<div class="border">
 		<form action="#" th:action="@{/sig/clientes}" th:object="${cliente}" method="post">
 			<div class="row">
 				<div class="input-box">
-					<label for="cpf" class="col-form-label">CPF</label>
+					<label for="cpf" class="label-form">CPF</label>
 					<input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="CPF">
 					<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="text-danger">
 					</span>
@@ -117,7 +114,7 @@
 			</div>
 			<div class="row">
 				<div class="input-box">
-					<label for="nome" class="col-form-label">Nome</label>
+					<label for="nome" class="label-form">Nome</label>
 					<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
 					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
 					</span>
@@ -125,7 +122,7 @@
 			</div>
 			<div class="row">
 				<div class="input-box">
-					<label for="dataNascimento" class="col-form-label">Data Nascimento</label>
+					<label for="dataNascimento" class="label-form">Data Nascimento</label>
 					<input type="text" th:field="*{dataNascimento}" class="form-control" id="dataNascimento"
 						placeholder="Data Nascimento">
 					<span th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"
@@ -135,7 +132,7 @@
 			</div>
 			<div class="row">
 				<div class="input-box">
-					<label for="dataNascimento" class="col-form-label">Sexo</label>
+					<label for="dataNascimento" class="label-form">Sexo</label>
 					<input type="text" th:field="*{sexo}" class="form-control" id="sexo" placeholder="M/F/O">
 					<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="text-danger">
 					</span>
@@ -143,24 +140,26 @@
 			</div>
 			<div class="row">
 				<div class="input-box">
-					<label for="cep" class="col-form-label">CEP</label>
+					<label for="cep" class="label-form">CEP</label>
 					<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="CEP">
 					<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-box">
-					<label for="complemento" class="col-form-label">Complemento</label>
+					<label for="complemento" class="label-form">Complemento</label>
 					<input type="text" th:field="*{complemento}" class="form-control" id="complemento"
 						placeholder="Complemento numero/apto">
 					<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
 						class="text-danger"></span>
 				</div>
+
 			</div>
-				<div class="button-cadastrar">
-					<input type="submit" class="btn btn-primary" value="Cadastrar-se">
-				</div>
+			<div class="botao">
+				<input type="submit" class="btn btn-primary" value="Cadastrar-se">
+			</div>
 		</form>
+
 	</div>
 </div>
 <h6 th:text="${message}" class="text-danger"></h6>

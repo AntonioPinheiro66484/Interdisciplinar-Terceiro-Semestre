@@ -92,13 +92,15 @@
 		<div>header</div>
 	</header>
 
-	<h3>Fazer Pedido</h3>
-
-	<div class="input-group">
+	<div class="title2">
+		<h1>Cadastro do Pedido</h1>
+	</div>
+	<div class="container-form-pedido"><br />
+	<div class="border">
 		<form action="#" th:action="@{/scv/pedidos}" th:object="${umPedido}" method="post">
 			<div class="row">
 				<div class="input-box">
-					<label for="CPF" class="col-form-label">CPF</label>
+					<label for="CPF" class="label-form">CPF</label>
 					<input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="cpf">
 					<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="textdanger">
 					</span>
@@ -106,7 +108,7 @@
 			</div>
 			<div class="row">
 				<div class="input-box">
-					<label for="produtoId" class="col-form-label">Código Produto</label>
+					<label for="produtoId" class="label-form">Código Produto</label>
 					<input type="text" th:field="*{produtoId}" class="form-control" id="produtoId"
 						placeholder="Código Produto">
 					<span th:if="${#fields.hasErrors('produtoId')}" th:errors="*{produtoId}" class="textdanger">
@@ -115,17 +117,17 @@
 			</div>
 			<div class="row">
 				<div class="input-box">
-					<label for="quantidade" class="col-form-label">Quantidade</label>
+					<label for="quantidade" class="label-form">Quantidade</label>
 					<input type="text" th:field="*{quantidade}" class="form-control" id="quantidade"
 						placeholder="Quantidade"> <span th:if="${#fields.hasErrors('quantidade')}"
 						th:errors="*{quantidade}" class="text-danger"></span>
 				</div>
-				<div class="button-cadastrar">
+			</div>
+				<div class="botao">
 					<input type="submit" class="btn btn-primary" value="Cadastrar Pedido">
 				</div>
-
-			</div>
 		</form>
+
 	</div>
 	</div>
 	<h6 th:text="${message}" class="text-danger"></h6>

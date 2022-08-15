@@ -7,7 +7,7 @@
 <link rel="stylesheet" th:href="@{/css/styleclaro.css}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 	integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <title>Squirrel Tech</title>
 </head>
 
@@ -64,7 +64,7 @@
 						<!--Link de Cadastrar Cliente-->
 						<a th:href="@{/sig/cliente}">
 							<div
-								class="text-white flex-column align-items-center cursor-pointer animate-shadow animate-shadow-white p-2 d-none d-lg-flex text-center me-3">
+							class="text-white flex-column align-items-center cursor-pointer animate-shadow animate-shadow-white p-2 d-none d-lg-flex text-center me-3"  >
 
 								<img src="icons/squirrelcolorpromissor.png" width="30" alt="logo image">
 								<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -94,10 +94,10 @@
 
 		</section>
 		</a>
-		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #15837D">
+		<nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-center" style="background-color: #179a9a">
 			<div class="container">
 				<a class="navbar-brand d-md-none d-md-flex text-white" href="#">Menu</a>
-				<button class="navbar-toggler align-self-center border-white" type="button" data-bs-toggle="collapse"
+				<button class="navbar-toggler align-content-center border-white" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span class="text-white">
@@ -112,7 +112,7 @@
 					<a class="navbar-brand text-white fw-bold d-none d-lg-block" href="#">Squirrel Tech</a>
 					<ul id="menu" class="navbar-nav">
 						<li class="nav-item dropdown">
-							<a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+							<a class="nav-link text-white dropdown-toggle ps-5" href="#" id="navbarDropdownMenuLink"
 								role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" href="#">Nintendo Wii</a></li>
@@ -131,15 +131,12 @@
 								<li><a class="dropdown-item" href="#">Promoções</a></li>
 							</ul>
 						</li>
-						<li class="nav-item"><a class="nav-link text-white" href="computadores.html">Computadores</a>
+						<li class="nav-item"><a class="nav-link text-white ps-5"href="computadores.html">Computadores</a>
 						</li>
-						<li class="nav-item"><a class="nav-link text-white" href="acessorios.html">Acessórios</a></li>
-						<li class="nav-item"><a class="nav-link text-white" href="smartwatches.html">Smartwatches</a>
-						</li>
-						<li class="nav-item"><a class="nav-link text-white" href="celulares.html">Celulares</a></li>
-						<li class="nav-item"><a class="nav-link text-white" href="consoles.html">Consoles</a></li>
-						<li class="nav-item"><a class="nav-link text-white" href="games.html">Games</a></li>
-						<li class="nav-item"><a class="nav-link text-white" href="/sig/produto">Cadastrar Produto</a>
+						<li  class="nav-item"><a class="nav-link text-white ps-5" href="acessorios.html">Acessórios</a></li>
+						<li  class="nav-item"><a class="nav-link text-white ps-5" href="consoles.html">Consoles</a></li>
+						<li  class="nav-item"><a class="nav-link text-white ps-5" href="games.html">Games</a></li>
+						<li  class="nav-item"><a class="nav-link text-white ps-5" href="/sig/produto">Cadastrar Produto</a>
 						</li>
 						<li class="d-block d-lg-none">
 							<hr class="bg-white">
@@ -164,7 +161,7 @@
 	<!--INICIO CAROUSEL-->
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class=""
 				aria-current="true" aria-label="Slide 1"></button>
 			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
 				aria-label="Slide 2"></button>
