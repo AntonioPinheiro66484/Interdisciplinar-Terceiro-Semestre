@@ -20,7 +20,7 @@ $(document).ready(function(){
     });
 
     $('#diminuiFonte').click(function(){
-        if(fonte>12){
+        if(fonte>14){
             fonte=fonte-1;
             $('body').css({'font-size': fonte+'px'});
             $('p').css({'font-size': fonte+'px'});
