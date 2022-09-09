@@ -134,14 +134,6 @@
 			</div>
 			<div class="row">
 				<div class="input-box">
-					<label for="dataNascimento" class="label-form">Sexo</label>
-					<input type="text" th:field="*{sexo}" class="form-control" id="sexo" placeholder="M/F/O">
-					<span th:if="${#fields.hasErrors('sexo')}" th:errors="*{sexo}" class="text-danger">
-					</span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-box">
 					<label for="cep" class="label-form">CEP</label>
 					<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="CEP">
 					<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
