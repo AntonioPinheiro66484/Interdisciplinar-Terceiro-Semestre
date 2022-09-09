@@ -29,14 +29,14 @@ body{
 
 .container-form {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .container-form-pedido {
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,17 +149,39 @@ h3{
 }
 
 @media screen and (max-width: 1330px) {
-    .form-image {
-        display: none;
+    .container {
+        width: 75%;
     }
+    .form {
+        width: 75%;
+    }
+
+    .input-box input{
+        width: 90%;
+    }
+
+    .border{
+        width: 30%;
+    }
+
+}
+@media screen and (max-width: 1250px) {
     .container {
         width: 50%;
     }
     .form {
-        width: 100%;
+        width: 50%;
     }
-}
 
+    .input-box input{
+        width: 70%;
+    }
+
+    .border{
+        width: 20%;
+    }
+
+}
 @media screen and (max-width: 1064px) {
     .container {
         width: 90%;
@@ -173,16 +195,8 @@ h3{
         overflow-y: scroll;
         flex-wrap: nowrap;
     }
-    .gender-inputs {
-        margin-top: 2rem;
-    }
-    .gender-group {
-        flex-direction: column;
-    }
-    .gender-title h6 {
-        margin: 0;
-    }
-    .gender-input {
-        margin-top: 0.5rem;
+
+    .input-box input{
+        width: auto;
     }
 }
