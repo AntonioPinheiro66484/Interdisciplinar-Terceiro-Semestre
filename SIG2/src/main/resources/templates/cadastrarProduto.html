@@ -91,9 +91,11 @@
 	<header th:replace="fragments/header :: menuSuperior">
 		<div>header</div>
 	</header>
-	<div class="title1">
+	<!--Forms-->
+	<div class="title">
 		<h1>Cadastro do Produto</h1>
 	</div>
+
 	<div class="container-form"><br />
 		<div class="border">
 			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">

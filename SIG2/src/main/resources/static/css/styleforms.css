@@ -5,25 +5,11 @@ body{
     align-items: center;
     background: #17a2b8;
 }
-
 .title{
+    justify-content: center;
     align-items: center;
     text-align: center;
     padding-bottom:2% ;
-    padding-top: 2%;
-}
-
-.title1{
-    align-items: center;
-    text-align: center;
-    padding-bottom:10% ;
-    padding-top: 2%;
-}
-
-.title2{
-    align-items: center;
-    text-align: center;
-    padding-bottom:0% ;
     padding-top: 2%;
 }
 
@@ -109,9 +95,11 @@ h3{
     width: 100%;
     align-items: center;
 }
+
 .label-form{
     text-align: left;
 } 
+
 .input-box input {
     margin: 0.6rem 0;
     padding-left: 0.8rem 1.2rem;
@@ -197,5 +185,23 @@ h3{
 
     .border{
         width: 15%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 35%;
+        height: auto;
+    }
+    .form {
+        width: 35%;
+    }
+
+    .input-box input{
+        width: 55%;
+    }
+
+    .border{
+        width: 12.%;
     }
 }
