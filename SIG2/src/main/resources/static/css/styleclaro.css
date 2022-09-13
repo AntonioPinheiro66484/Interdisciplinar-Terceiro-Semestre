@@ -148,9 +148,11 @@ font-family: 'Open Sans', sans-serif;
 .font-12 {
     font-size: 12px;
 }
+
 .titulo-descricao-produto{
     text-align: center;
 }
+
 #rodape {
 	width: 100%;
     height: auto;
@@ -162,6 +164,7 @@ font-family: 'Open Sans', sans-serif;
     padding-top: 1%;
     margin-top: 4%;
 }
+
 .rodape-2 {
 	width: auto;
     height: auto;
@@ -173,6 +176,7 @@ font-family: 'Open Sans', sans-serif;
     padding-top: 1%;
     margin-top: 4%;
 }
+
 #acessibilidade{
     width: 100%;
     height: AUTO;
@@ -180,6 +184,7 @@ font-family: 'Open Sans', sans-serif;
     background-color: #171616;
     /*display: block;*/     
 }
+
 #atalhos{
     list-style: none;
     font: Verdana;
@@ -210,6 +215,7 @@ font-family: 'Open Sans', sans-serif;
 body{
 	background: #fafafa;
 }
+
 body.dark-mode {
 	background-color: #212529;
     color:white;
@@ -220,14 +226,17 @@ a{
 	color:#FFFF;
 	text-decoration: none;
 }
+
 #titulo-pag-acess{
     font-size: 24pt;
     text-align: center;
 }
+
 #conteudo{
     width: 100%;
     min-height: 500px;
 }
+
 .paragrafo1{
     
     font-size: 15pt;
