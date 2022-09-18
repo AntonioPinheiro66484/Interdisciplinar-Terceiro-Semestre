@@ -14,7 +14,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem 0.5rem;
+    padding: 0.3rem;
 }
 
 .logo {
@@ -41,7 +41,7 @@ a{
 }
 
 .nav-item {
-    margin: 0 30px;
+    margin: 0 20px;
     align-items: center;
 }
 
@@ -60,42 +60,39 @@ a{
     display: none;
 }
 
-@media screen and (max-width: 730px) {
-    .nav-bar {
-        padding: 1.5rem 4rem;
-    }
+@media screen and (max-width: 919px) {
+   
     .nav-item {
-        display: none;
+        margin: 0 15px;
+        align-items: center;
     }
-    .login-button {
-        display: none;
+
+    .nav-link{
+        font-size: 16px;
     }
-    .mobile-menu-icon {
-        display: block;
-    }
-    .mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-    .mobile-menu .nav-item {
-        display: block;
-        padding-top: 1.2rem;
-    }
-    .mobile-menu .login-button {
-        display: block;
-        padding: 1rem 2rem;
-    }
-    .mobile-menu .login-button button {
+
+    .nav-bar {
         width: 100%;
+        display: flex;
+        justify-content: space-around;
+
     }
-    .open {
-        display: block;
-    }
+
+    @media screen and (max-width: 819px) {
+   
+        .nav-item {
+            margin: 0 10px;
+            align-items: center;
+        }
+    
+        .nav-link{
+            font-size: 14px;
+        }
+    
+        .nav-bar {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            
+        }
 }
