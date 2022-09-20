@@ -14,7 +14,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 0.3rem;
+    padding: 0.2rem;
 }
 
 .logo {
@@ -29,6 +29,7 @@ header {
 a{
     list-style: none;
 }
+
 .nav-list {
     display: flex;
     align-items: center;
@@ -41,6 +42,7 @@ a{
 }
 
 .nav-item {
+    display: inline;
     margin: 0 20px;
     align-items: center;
 }
@@ -52,16 +54,48 @@ a{
     font-weight: 400;
 }
 
-.mobile-menu-icon {
-    display: none;
+#menu{
+    display:flex;
+    list-style:none;
+    gap: .5rem;
 }
 
-.mobile-menu {
-    display: none;
+#btn-mobile{
+    display:none;
 }
+
+
+/* responsividade */
+
+@media screen and (max-width: 1116px) {
+   
+    .nav-item {
+        margin: 0 30px;
+        align-items: center;
+    }
+
+    .nav-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+@media screen and (max-width: 1013px) {
+    .nav-item {
+        margin: 0 20px;
+        align-items: center;
+    }
+
+
+    .nav-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+    }
 
 @media screen and (max-width: 919px) {
-   
     .nav-item {
         margin: 0 15px;
         align-items: center;
@@ -75,11 +109,21 @@ a{
         width: 100%;
         display: flex;
         justify-content: space-around;
-
     }
-
+    /* menu mobile */
     @media screen and (max-width: 819px) {
-   
+        #btn-mobile{
+            display:block;
+        }
+    
+        #menu{
+            display:none;
+        }
+
+        nav.active #menu{
+            display:flex;
+        }
+        
         .nav-item {
             margin: 0 10px;
             align-items: center;
@@ -93,6 +137,6 @@ a{
             width: 100%;
             display: flex;
             justify-content: space-around;
-            
+
         }
 }
