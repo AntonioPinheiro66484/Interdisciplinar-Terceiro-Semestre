@@ -1,7 +1,9 @@
 <!doctype html>
+<html lang="pt-BR">
+
 <head>
-	<html lang="pt-BR">
-	
+
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
 	<link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}">
@@ -11,8 +13,8 @@
 	<link rel="stylesheet" th:href="@{/css/menu.css}">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-	integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<title>Squirrel Tech</title>
 </head>
 
@@ -100,11 +102,10 @@
 		</section>
 		</a>
 		<!--Inicio Menu navbar-->
-		<div class="Container nav-bar"></div>
-		<nav class="nav-bar">
+		<nav id="nav-bar">
 			<!--Botao menu-->
 			<button id="btn-mobile">Menu</button>
-			<div class="nav-list">
+			<div id="nav-list">
 				<!--Menu-->
 				<ul id="menu">
 					<li class="nav-item"><a href="./" class="nav-link"> Squirrel Tech </a></li>
@@ -114,10 +115,10 @@
 					<li class="nav-item"><a href="#" class="nav-link"> Games </a></li>
 					<li class="nav-item"><a href="/sig/produto" class="nav-link"> Cadastrar Produto </a></li>
 				</ul>
-			</div>
-			<div class="login-button">
 
-			</div>
+				<div>
+
+				</div>
 		</nav>
 		<!--Fim do nav-->
 		<div vw class="enabled">
