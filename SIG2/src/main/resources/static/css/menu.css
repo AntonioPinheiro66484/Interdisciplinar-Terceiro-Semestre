@@ -117,10 +117,10 @@ a{
         }
     
         #menu{
-            display:none;
+            display:display:block;
         }
 
-        nav.active #menu{
+        nav-bar.active #menu{
             display:flex;
         }
         

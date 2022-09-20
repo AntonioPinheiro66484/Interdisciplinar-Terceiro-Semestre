@@ -1,7 +1,7 @@
 const btnMobile = document.getElementById('btn-mobile');
 
 function toggleMenu(){
-    const nav = document.getElementById('nav');
+    const nav = document.getElementById('nav-bar');
     nav.classList.toggle('active');
 }
 
