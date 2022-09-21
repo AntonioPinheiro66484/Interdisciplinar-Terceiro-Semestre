@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="pt-BR">
 
+</html>
+
 <head>
 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 	<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
 	<link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}">
 	<link rel="stylesheet" th:href="@{/css/bootstrap-reboot.css}">
@@ -104,10 +107,14 @@
 		<!--Inicio Menu navbar-->
 		<nav id="nav-bar">
 			<!--Botao menu-->
-			<button id="btn-mobile">Menu</button>
+			<div class="botaomb">
+				<button  id="btn-mobile" img th:src="@{/images/menu_white_36dp.svg}">
+					<i class="bi bi-list"></i>
+				</button>
+			</div>
+			<div class="pai-nav-list">
 			<div id="nav-list">
-				<!--Menu-->
-				<ul id="menu">
+				<ul id="menu" >
 					<li class="nav-item"><a href="./" class="nav-link"> Squirrel Tech </a></li>
 					<li class="nav-item"><a href="#" class="nav-link"> Computador </a></li>
 					<li class="nav-item"><a href="#" class="nav-link"> Acessórios </a></li>
@@ -115,10 +122,8 @@
 					<li class="nav-item"><a href="#" class="nav-link"> Games </a></li>
 					<li class="nav-item"><a href="/sig/produto" class="nav-link"> Cadastrar Produto </a></li>
 				</ul>
-
-				<div>
-
-				</div>
+			</div>
+				<!--Menu-->
 		</nav>
 		<!--Fim do nav-->
 		<div vw class="enabled">
