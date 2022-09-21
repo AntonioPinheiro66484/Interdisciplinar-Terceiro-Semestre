@@ -94,12 +94,11 @@ a{
         width: 100%;
         display: flex;
 
-
     }
 
-@media screen and (max-width: 1013px) {
+@media screen and (max-width: 1039px) {
     .nav-item {
-        margin: 0 20px;
+        margin: 0 19px;
         align-items: center;
     }
 
@@ -110,7 +109,7 @@ a{
 
     }
 
-@media screen and (max-width: 919px) {
+@media screen and (max-width: 932px) {
     .nav-item {
         margin: 0 15px;
         align-items: center;
