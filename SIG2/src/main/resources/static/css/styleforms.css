@@ -131,6 +131,7 @@ h3{
 }
 
 .botao{
+    
     text-align: center;
     color: #59449e;
 }
@@ -202,5 +203,9 @@ h3{
 
     .border{
         width: 12.%;
+    }
+
+    .botão{
+        width:50;
     }
 }
