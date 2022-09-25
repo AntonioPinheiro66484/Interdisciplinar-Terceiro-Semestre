@@ -27,5 +27,29 @@ public class GUIMenuController {
 	public ModelAndView produto2() {
 		return new ModelAndView("paginaProduto2");
 	}	
+	@GetMapping("/paginaProduto1")
+	public ModelAndView produto1() {
+		return new ModelAndView("paginaProduto1");
+	}	
+	@GetMapping("/paginaProduto3")
+	public ModelAndView produto3() {
+		return new ModelAndView("paginaProduto3");
+	}	
+	@GetMapping("/paginaProduto4")
+	public ModelAndView produto4() {
+		return new ModelAndView("paginaProduto4");
+	}	
+	@GetMapping("/paginaProduto5")
+	public ModelAndView produto5() {
+		return new ModelAndView("paginaProduto5");
+	}	
+	@GetMapping("/paginaProduto6")
+	public ModelAndView produto6() {
+		return new ModelAndView("paginaProduto6");
+	}	
+	@GetMapping("/paginaProduto7")
+	public ModelAndView produto7() {
+		return new ModelAndView("paginaProduto7");
+	}	
 }
 
