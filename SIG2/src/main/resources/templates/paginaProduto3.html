@@ -14,6 +14,7 @@
 	<link rel="stylesheet" th:href="@{/css/bootstrap-utilities.css}">
 	<link rel="stylesheet" th:href="@{/css/styleclaro.css}">
 	<link rel="stylesheet" th:href="@{/css/menu.css}">
+	<link rel="stylesheet" th:href="@{/css/pagina-produto.css}">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -108,21 +109,21 @@
 		<nav id="nav-bar">
 			<!--Botao menu-->
 			<div class="botaomb">
-				<button  id="btn-mobile" img th:src="@{/images/menu_white_36dp.svg}">
+				<button id="btn-mobile" img th:src="@{/images/menu_white_36dp.svg}">
 					<i class="bi bi-list"></i>
 				</button>
 			</div>
 			<div class="pai-nav-list">
-			<div id="nav-list">
-				<ul id="menu" >
-					<li class="nav-item"><a href="./" class="nav-link"> Squirrel Tech </a></li>
-					<li class="nav-item"><a href="#" class="nav-link"> Computador </a></li>
-					<li class="nav-item"><a href="#" class="nav-link"> Acessórios </a></li>
-					<li class="nav-item"><a href="#" class="nav-link"> Consoles </a></li>
-					<li class="nav-item"><a href="#" class="nav-link"> Games </a></li>
-					<li class="nav-item"><a href="/sig/produto" class="nav-link"> Cadastrar Produto </a></li>
-				</ul>
-			</div>
+				<div id="nav-list">
+					<ul id="menu">
+						<li class="nav-item"><a href="./" class="nav-link"> Squirrel Tech </a></li>
+						<li class="nav-item"><a href="#" class="nav-link"> Computador </a></li>
+						<li class="nav-item"><a href="#" class="nav-link"> Acessórios </a></li>
+						<li class="nav-item"><a href="#" class="nav-link"> Consoles </a></li>
+						<li class="nav-item"><a href="#" class="nav-link"> Games </a></li>
+						<li class="nav-item"><a href="/sig/produto" class="nav-link"> Cadastrar Produto </a></li>
+					</ul>
+				</div>
 				<!--Menuu-->
 		</nav>
 		<!--Fim do nav-->
@@ -140,123 +141,101 @@
 	</header>
 
 	<!--Carrossel teste-->
-	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img class="d-block w-100" src="images/bannerProdutos.png" alt="Primeira Oferta">
-			</div>
-			<div class="carousel-item">
-				<img class="d-block w-100" src="images/bannerGod.png" alt="Segunda Oferta">
-			</div>
-			<div class="carousel-item">
-				<img class="d-block w-100" src="images/bannerAcessorios.png" alt="Terceira Oferta">
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Anterior</span>
-		</a>
-		<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Proximo</span>
-		</a>
-	</div>
+
 	<!-- fimteste -->
 	<!--INICIO BODY-->
-	<div id="conteudo" class="container py-4">
-		<div class="d-flex">
-			<div>
-				<div class="row">
-					<div class="col product-card animate-shadow animate-shadow-blue">
-						<a th:href="@{/paginaProduto}" class="text-decoration-none">
-							<div
-								class="h-100 w-100 cursor-pointer d-flex align-items-center justify-content-center flex-column">
-								<img src="images/produto-1.png" class="product-image" alt="Produto 1">
-								<h3 class="product-title">Headset Gamer HyperX Cloud Stinger-HX-HSCS-BK/NA</h3>
-								<span class="product-price">R$ 229,99</span>
-							</div>
-						</a>
-					</div>
-					<div class="col product-card animate-shadow animate-shadow-blue">
-						<a th:href="@{/paginaProduto2}" class="text-decoration-none">
-							<div
-								class="h-100 w-100 cursor-pointer d-flex align-items-center justify-content-center flex-column">
-								<img src="images/produto-2.png" class="product-image" alt="Produto 1">
-								<h3 class="product-title">Console Nintendo Switch 32GB + Controle Joy-Con Cinza</h3>
-								<span class="product-price">R$ 2.554,50</span>
-							</div>
-						</a>
-					</div>
-					<div class="col product-card animate-shadow animate-shadow-blue">
-						<a th:href="@{/paginaProduto1}" class="text-decoration-none">
-							<div
-								class="h-100 w-100 cursor-pointer d-flex align-items-center justify-content-center flex-column">
-								<img src="images/produto-3.png" class="product-image" alt="Produto 1">
-								<h3 class="product-title">Console Xbox Series S 500GB</h3>
-								<span class="product-price">R$ 2.044,31</span>
-							</div>
-						</a>
-					</div>
-					<div class="col product-card animate-shadow animate-shadow-blue">
-						<a th:href="@{/paginaProduto3}" class="text-decoration-none">
-							<div
-								class="h-100 w-100 cursor-pointer d-flex align-items-center justify-content-center flex-column">
-								<img src="images/produto-4.png" class="product-image" alt="Produto 1">
-								<h3 class="product-title">Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3070</h3>
-								<span class="product-price">R$ 4.563,65</span>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col product-card animate-shadow animate-shadow-blue">
-						<a th:href="@{/paginaProduto4}" class="text-decoration-none">
-							<div
-								class="h-100 w-100 cursor-pointer d-flex align-items-center justify-content-center flex-column">
-								<img src="images/produto-5.png" class="product-image" alt="Produto 1">
-								<h3 class="product-title">Call of duty: Black Ops ColdWar - Xbox One</h3>
-								<span class="product-price">R$ 279,00</span>
-							</div>
-						</a>
-					</div>
-					<div class="col product-card animate-shadow animate-shadow-blue">
-						<a th:href="@{/paginaProduto5}" class="text-decoration-none">
-							<div
-								class="h-100 w-100 cursor-pointer d-flex align-items-center justify-content-center flex-column">
-								<img src="images/produto-6.png" class="product-image" alt="Produto 1">
-								<h3 class="product-title">The Legend Of Zelda: Breath Of The Wild - Switch</h3>
-								<span class="product-price">R$ 346,89</span>
-							</div>
-						</a>
-					</div>
-					<div class="col product-card animate-shadow animate-shadow-blue">
-						<a th:href="@{/paginaProduto6}" class="text-decoration-none">
-							<div
-								class="h-100 w-100 cursor-pointer d-flex align-items-center justify-content-center flex-column">
-								<img src="images/produto-10.png" class="product-image" alt="Produto 1">
-								<h3 class="product-title">The Witcher 3 : Wild Hunt - GOTY - PS4</h3>
-								<span class="product-price">R$ 99,90</span>
-							</div>
-						</a>
-					</div>
-					<div class="col product-card animate-shadow animate-shadow-blue">
-						<a th:href="@{/paginaProduto7}" class="text-decoration-none">
-							<div
-								class="h-100 w-100 cursor-pointer d-flex align-items-center justify-content-center flex-column">
-								<img src="images/produto-9.png" class="product-image" alt="Produto 1">
-								<h3 class="product-title">Marvels Spider-Man <br> - PS4</h3>
-								<span class="product-price">R$ 169,90</span>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="text-center cursor-pointer my-3">
-			ver mais
-
-		</div>
+	<div class="titulo">
+		<h1>Detalhes do Produto</h1>
 	</div>
+	<!-- container produto -->
+	<section class="container">
+
+		<!-- <nav aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="./">Home</a></li>
+			<li class="breadcrumb-item"><a href="./camisetas.html">Camisetas</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Camiseta manga comprida</li>
+		  </ol>
+		</nav> -->
+
+		<article class="row produtos-compra">
+			<figure class="col-md-7 mb-3">
+				<img src="images/rtx3070.png" class="img-fluid" alt="Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3070">
+			</figure>
+
+			<section class="col-md-5 mb-3 d-flex flex-column justify-content-around">
+
+				<article class="produtos-conteudo">
+					<h3>Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3070</h3>
+					<strong>
+						Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3070 Gaming OC, LHR, 8GB, GDDR6, DLSS, Ray Tracing, GV-N3070GAMING OC-8GD
+					</strong>
+
+					<article class="produtos-preco">
+
+						<div class="produtos-stars">
+							<h5>Avaliação</h5>
+							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+							</svg>
+
+							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+							</svg>
+
+							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+							</svg>
+
+							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill"
+								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+							</svg>
+						</div>
+
+						<strong>
+							R$ 229,99
+							<span class="d-block">Em até 12x sem Juros</span>
+						</strong>
+
+					</article>
+
+					<form action="#">
+						<div class="form-group">
+							<label for="produtos-quantidade-itens">Quantidade</label>
+							<select class="form-control" id="produtos-quantidade-itens">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+
+						<button type="submit" class="btn btn-success col-md-12">Adicionar ao carrinho</button>
+					</form>
+				</article>
+			</section>
+			<article class="produtos-conteudo">
+				<h3>Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3070</h3>
+				<p>
+					As placas de vídeo GeForce RTXTM 3070 contam com a tecnologia Ampere — a 2ª geração da arquitetura RTX da NVIDIA. Desenvolvidas com Ray Tracing Cores e Tensor Cores avançados, novos multiprocessadores de streaming e uma memória de alta velocidade, elas oferecem a potência necessária para você detonar nos games mais exigentes.
+				</p>
+			</article>
+			<div class="fb-comments col-md-12 mt-2 mb-5"
+				data-href="http://127.0.0.1:5500/Hands-on-2/produto-camiseta-manga-comprida.html" data-numposts="5"
+				data-width="100%"></div>
+		</article>
+	</section>
+	<!-- container produto -->
+
 	<!--FIM BODY-->
 
 
@@ -353,3 +332,7 @@
 	new window.VLibras.Widget('https://vlibras.gov.br/app');
 
 </script>
+
+
+
+<!--FIM BODY-->
