@@ -11,11 +11,14 @@
 		}
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+	<link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}">
+	<link rel="stylesheet" th:href="@{/css/bootstrap-reboot.css}">
+	<link rel="stylesheet" th:href="@{/css/bootstrap-utilities.css}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" th:href="@{/css/styleclaro.css}">
+	<link rel="stylesheet" th:href="@{/css/styleforms.css}">
 </head>
 
 <body>
@@ -26,20 +29,26 @@
 				</li>
 				<li><a href="#menu" accesskey="2" title="Ir diretamente para o menu">Ir para o menu [2]</a></li>
 				<li><a href="#rodape" accesskey="3" title="Ir diretamente para o rodapé">Ir para o rodape [3]</a></li>
-
+			</ul>
+			<ul id="atalhos2">
 				<li id="pgacess"><a th:href="@{/acessibilidade}"
 						title="Ir para pagina de acessabilidade">Acessibilidade</a></li>
-				<li class="contraste"><a href="#" title="Contraste preto" id="modoEscuro">Modo escuro</a></li>
-				<li class="contraste"><a href="#" title="sem Contraste" id="modoClaro">Modo Claro</a></li>
+				<button onclick="myFunction()">Toggle dark mode</button>
 				<li class="fonte"><a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a></li>
 				<li class="fonte"><a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a></li>
+				<script>
+					function myFunction() {
+						var element = document.body;
+						element.classList.toggle("dark-mode");
+					}
+				</script>
 			</ul>
 		</div>
 		<section class="header-main border-bottom border-5" style="background-color: #013030">
 			<div class="container">
 				<div class="row p-2 pt-3 pb-3 d-flex align-items-center">
 					<div class="col-md-2 d-flex justify-content-center justify-content-lg-start mb-3 mb-lg-0">
-						<a th:href="@{/}"><img th:src="@{/images/superterencio.png}" width="100" alt="logo image"></a>
+						<a th:href="@{/}"><img th:src="@{/images/Terenciologodefinitiva.png}" width="250" alt="logo image"></a>
 					</div>
 					<div class="col-md-7">
 						<div class="input-group">
@@ -59,7 +68,7 @@
 						</div>
 					</div>
 					<div class="col-3 d-flex justify-content-end">
-						<!--Link de Cadastrar produto-->
+						<!--Link de Cadastrar Produto-->
 						<a th:href="@{/sig/produtos}">
 							<div
 								class="text-white flex-column align-items-center cursor-pointer animate-shadow animate-shadow-white p-2 d-none d-lg-flex text-center me-3">
@@ -82,110 +91,104 @@
 	<header th:replace="fragments/header :: menuSuperior">
 		<div>header</div>
 	</header>
-	<div class="container my-5">
-		<br />
-		<h3>Cadastrar Produto</h3>
-		<div class="card">
-			<div class="card-body">
-				<div class="col-md-8">
-					<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="nome" class="col-form-label">Nome do Produto</label>
-								<input type="text" th:field="*{nome}" class="form-control" id="nome"
-									placeholder="Nome Produto">
-								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
-								</span>
-							</div>
+	<!--Forms-->
+	<div class="title">
+		<h1>Cadastro do Produto</h1>
+	</div>
 
-						</div>
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="descricao" class="col-form-label">Descrição</label>
-								<input type="text" th:field="*{descricao}" class="form-control" id="descricao"
-									placeholder="Descrição de Produto">
-								<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
+	<div class="container-form"><br />
+		<div class="border">
+			<form action="#" th:action="@{/sig/produtos}" th:object="${produto}" method="post">
+				<div class="row">
+					<div class="input-box">
+						<label for="nome" class="label-form">Nome do Produto</label>
+						<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome Produto">
+						<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger">
+						</span>
+					</div>
 
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="fabricante" class="col-form-label">Fabricante</label>
-								<input type="text" th:field="*{fabricante}" class="form-control" id="fabricante"
-									placeholder="Digite o nome do Fabricante">
-								<span th:if="${#fields.hasErrors('fabricante')}" th:errors="*{fabricante}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-
-
-
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="fornecedor" class="col-form-label">Fornecedor</label>
-								<input type="text" th:field="*{fornecedor}" class="form-control" id="descricao"
-									placeholder="Digite o nome do Fornecedor">
-								<span th:if="${#fields.hasErrors('fornecedor')}" th:errors="*{fornecedor}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="fabricante" class="col-form-label">CNPJ do Fornecedor</label>
-								<input type="text" th:field="*{cnpjFornecedor}" class="form-control" id="cnpjFornecedor"
-									placeholder="Digite o CNPJ do Fornecedor">
-								<span th:if="${#fields.hasErrors('cnpjFornecedor')}" th:errors="*{cnpjFornecedor}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="nome" class="col-form-label">Preço do Produto</label>
-								<input type="text" th:field="*{preco}" class="form-control" id="nome"
-									placeholder="Preço do Produto">
-								<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-danger">
-								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="dataNascimento" class="col-form-label">Data de Cadastro do Produto</label>
-								<input type="text" th:field="*{dataCadastro}" class="form-control" id="dataCadastro"
-									placeholder="Data Cadastro">
-								<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
-									class="text-danger">
-								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="qtdEstoque" class="col-form-label">Quantidade de produtos</label>
-								<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
-									placeholder="qtdEstoque">
-								<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}"
-									class="text-danger">
-								</span>
-							</div>
-
-						</div>
-						<div class="form-group col-md-8">
-							<input type="submit" class="btn btn-primary" value="Cadastrar Produto">
-						</div>
-					</form>
 				</div>
-			</div>
-			<h6 th:text="${message}" class="text-danger"></h6>
+				<div class="row">
+					<div class="input-box">
+						<label for="descricao" class="label-form">Descrição</label>
+						<input type="text" th:field="*{descricao}" class="form-control" id="descricao"
+							placeholder="Descrição de Produto">
+						<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="text-danger">
+						</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="fabricante" class="label-form">Fabricante</label>
+						<input type="text" th:field="*{fabricante}" class="form-control" id="fabricante"
+							placeholder="Digite o nome do Fabricante">
+						<span th:if="${#fields.hasErrors('fabricante')}" th:errors="*{fabricante}" class="text-danger">
+						</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="fornecedor" class="label-form">Fornecedor</label>
+						<input type="text" th:field="*{fornecedor}" class="form-control" id="descricao"
+							placeholder="Digite o nome do Fornecedor">
+						<span th:if="${#fields.hasErrors('fornecedor')}" th:errors="*{fornecedor}" class="text-danger">
+						</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="fabricante" class="label-form">CNPJ do Fornecedor</label>
+						<input type="text" th:field="*{cnpjFornecedor}" class="form-control" id="cnpjFornecedor"
+							placeholder="Digite o CNPJ do Fornecedor">
+						<span th:if="${#fields.hasErrors('cnpjFornecedor')}" th:errors="*{cnpjFornecedor}"
+							class="text-danger">
+						</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="nome" class="label-form">Preço do Produto</label>
+						<input type="text" th:field="*{preco}" class="form-control" id="nome"
+							placeholder="Preço do Produto">
+						<span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-danger">
+						</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-box">
+						<label for="dataNascimento" class="label-form">Data de Cadastro do Produto</label>
+						<input type="text" th:field="*{dataCadastro}" class="form-control" id="dataCadastro"
+							placeholder="Data Cadastro">
+						<span th:if="${#fields.hasErrors('dataCadastro')}" th:errors="*{dataCadastro}"
+							class="text-danger">
+						</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-box">
+						<label for="qtdEstoque" class="label-form">Quantidade de produtos</label>
+						<input type="text" th:field="*{qtdEstoque}" class="form-control" id="qtdEstoque"
+							placeholder="qtdEstoque">
+						<span th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}" class="text-danger">
+						</span>
+					</div>
+
+				</div>
+				<div class="botao">
+					<input type="submit" class="btn btn-primary" value="Cadastrar Produto">
+				</div>
+			</form>
 		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-			crossorigin="anonymous"></script>
+	</div>
+	<h6 th:text="${message}" class="text-danger"></h6>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
@@ -194,9 +197,9 @@
 
 <script th:src="@{/js/fonte.js}"></script>
 
-<script th:src="@{/js/botao.js}"></script>
-
 <script th:src="@{/js/contraste.js}"></script>
+
+<script th:src="@{/js/bootstrap.js}"></script>
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 

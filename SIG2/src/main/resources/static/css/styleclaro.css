@@ -198,6 +198,7 @@ font-family: 'Open Sans', sans-serif;
 #atalhos li{
     display: inline;
 }
+
 #atalhos2{
     list-style: none;
     font: Verdana;
@@ -209,6 +210,14 @@ font-family: 'Open Sans', sans-serif;
 }
 
 #atalhos2 li{
+    display: inline;
+}
+
+#atalhos2 p{
+    display: inline;
+}
+
+#atalhos2 input{
     display: inline;
 }
 
