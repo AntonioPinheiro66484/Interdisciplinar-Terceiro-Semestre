@@ -32,15 +32,10 @@
 			<ul id="atalhos2">
 				<li id="pgacess"><a th:href="@{/acessibilidade}"
 						title="Ir para pagina de acessabilidade">Acessibilidade</a></li>
-				<button onclick="myFunction()">Toggle dark mode</button>
+				<p>Dark Mode</p>
+        <input type="checkbox" id="check" onclick="changeStatus()"></input>
 				<li class="fonte"><a href="#" title="Aumentar a fonte(Ctrl +)" id="aumentaFonte">A+</a></li>
 				<li class="fonte"><a href="#" title="Diminuir a fonte(Ctrl -)" id="diminuiFonte">A-</a></li>
-				<script>
-					function myFunction() {
-						var element = document.body;
-						element.classList.toggle("dark-mode");
-					}
-				</script>
 			</ul>
 		</div>
 		<section class="header-main border-bottom border-5" style="background-color: #013030">
@@ -140,6 +135,8 @@
 <script th:src="@{/js/bootstrap.js}"></script>
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script th:src="@{/js/Darkmode.js}"></script>
 
 <script>
 

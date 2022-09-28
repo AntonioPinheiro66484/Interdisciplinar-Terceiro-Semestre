@@ -1,4 +1,4 @@
-a//We're going to use "check" to get the ckeckbox element
+//We're going to use "check" to get the ckeckbox element
 const check =document.getElementById("check")
 
 //If darkMode doesn’t exist in the LocalStorage, create it. False by default
