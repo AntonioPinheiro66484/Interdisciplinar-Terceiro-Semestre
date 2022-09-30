@@ -1,4 +1,4 @@
-a//We're going to use "check" to get the ckeckbox element
+//We're going to use "check" to get the ckeckbox element
 const check =document.getElementById("check")
 
 //If darkMode doesn’t exist in the LocalStorage, create it. False by default
@@ -22,7 +22,7 @@ function checkStatus(){
         document.getElementsByTagName("body")[0].style.color="black";
 
         document.getElementsByTagName("p")[0].style.color="black";  //same CSS changes but for light mode
-        document.body.style.backgroundColor = "#FFF";
+        document.body.style.backgroundColor = "#179a9a";
     }
 }
 
@@ -32,7 +32,7 @@ function changeStatus(){                                            //This funct
         document.getElementsByTagName("body")[0].style.color="black"; 
 
         document.getElementsByTagName("p")[0].style.color="black"; //same CSS changes as in checkStatus
-        document.body.style.backgroundColor = "#FFF";
+        document.body.style.backgroundColor = "#179a9a";
     } else{
         localStorage.setItem('darkMode', "true");                   //same code but adapted for dark theme
         document.getElementsByTagName("body")[0].style.color="#FFF";
