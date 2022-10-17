@@ -62,7 +62,14 @@
         font-size: 16px;
         line-height: 19px;
     }
-
+    
+    .product-price-escuro{
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    
     .side-banner {
         background: url("images/banner_img.jpg") no-repeat center;
         background-size: contain;
