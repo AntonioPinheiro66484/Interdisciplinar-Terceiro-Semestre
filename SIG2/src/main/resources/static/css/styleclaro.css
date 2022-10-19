@@ -35,7 +35,7 @@
     }
     
     .product-title {
-        color: #404040;
+        color: black;
         font-size: 16px;
         max-width: 100%;
         font-weight: 400;
@@ -57,7 +57,7 @@
     }
     
     .product-price {
-        color: #404040;
+        color: black;
         font-weight: bold;
         font-size: 16px;
         line-height: 19px;
