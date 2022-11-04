@@ -7,7 +7,9 @@
     font-family: 'Open Sans', sans-serif;
     
     }
-    
+    .colorbutton{
+        color: white !important;
+    }
     .product-card {
         height: 300px;
         flex: 1 0 21%;
