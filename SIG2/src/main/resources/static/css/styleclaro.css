@@ -243,12 +243,13 @@
     
     body{
         background: #fafafa;
+        transition: 0.5s;
     }
     
     body.dark-mode {
         background-color: #212529;
         color:white;
-        
+        transition: 0.5s; 
     }
     
     a{
