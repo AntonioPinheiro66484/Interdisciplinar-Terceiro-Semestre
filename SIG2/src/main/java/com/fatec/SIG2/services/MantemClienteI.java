@@ -67,13 +67,8 @@ public class MantemClienteI implements MantemCliente {
 		Optional<Cliente> umCliente = consultaPorId(cliente.getId());
 		Endereco endereco = obtemEndereco(cliente.getCep());
 		if (umCliente.isPresent() & endereco != null) {
-<<<<<<< HEAD
-			Cliente clienteModificado = new Cliente(cliente.getNome(), cliente.getDataNascimento(),cliente.getSexo(),
-					cliente.getCpf(), cliente.getCep(), cliente.getComplemento(),cliente.getEmail(),cliente.getSenha());
-=======
-			Cliente clienteModificado = new Cliente(cliente.getNome(), cliente.getDataNascimento(), cliente.getSexo(),cliente.getSenha(),cliente.getEmail(),
+			Cliente clienteModificado = new Cliente(cliente.getNome(), cliente.getDataNascimento(),cliente.getSexo(),cliente.getEmail(),cliente.getSenha(),
 					cliente.getCpf(), cliente.getCep(), cliente.getComplemento());
->>>>>>> 19b97c2dedd096fb2c93305045b9571afb78777b
 			clienteModificado.setId(cliente.getId());
 			clienteModificado.obtemDataAtual(new DateTime());
 			clienteModificado.setEndereco(endereco.getLogradouro());

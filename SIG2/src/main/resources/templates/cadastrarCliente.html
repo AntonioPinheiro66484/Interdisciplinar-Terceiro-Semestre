@@ -148,21 +148,13 @@
 							class="text-danger"></span>
 					</div>
 				</div>
-<<<<<<< HEAD
-				
-				<div class="row">
-					<div class="input-box">
-						<label for="email" class="label-form">E-mail</label>
-						<input type="text" th:field="*{email}" class="form-control" id="email"
-							placeholder="Digite seu e-mail">
-=======
 
 				<div class="row">
 					<div class="input-box">
 						<label for="email" class="label-form">Email</label>
 						<input type="email" th:field="*{email}" class="form-control" id="email"
-							placeholder="Complemento numero/apto">
->>>>>>> 19b97c2dedd096fb2c93305045b9571afb78777b
+							placeholder="Digite seu E-mail">
+
 						<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
 							class="text-danger"></span>
 					</div>
@@ -171,11 +163,7 @@
 				<div class="row">
 					<div class="input-box">
 						<label for="senha" class="label-form">Senha</label>
-<<<<<<< HEAD
 						<input type="password" size="6" maxlength="6" th:field="*{senha}" class="form-control" id="senha"
-=======
-						<input type="password" th:field="*{senha}" class="form-control" id="senha"
->>>>>>> 19b97c2dedd096fb2c93305045b9571afb78777b
 							placeholder="Digite sua senha">
 						<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}"
 							class="text-danger"></span>
@@ -184,15 +172,9 @@
 
 				<div class="row">
 					<div class="input-box">
-<<<<<<< HEAD
 						<label for="senha" class="label-form">Confirme sua senha</label>
 						<input type="password" size="6" maxlength="6" th:field="*{senha}" class="form-control" id="senha"
 							placeholder="Digite sua senha novamente">
-=======
-						<label for="senha" class="label-form">Confirmar Senha</label>
-						<input type="password" th:field="*{senha}" class="form-control" id="senha"
-							placeholder="Digite sua senha novamente:">
->>>>>>> 19b97c2dedd096fb2c93305045b9571afb78777b
 						<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}"
 							class="text-danger"></span>
 					</div>
