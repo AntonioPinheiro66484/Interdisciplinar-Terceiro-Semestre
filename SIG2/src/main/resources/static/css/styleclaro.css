@@ -48,7 +48,7 @@
     }
     
     .product-title-escuro {
-        color: #FFF;
+        color: yellow;
         font-size: 16px;
         max-width: 100%;
         font-weight: 400;
@@ -66,7 +66,7 @@
     }
     
     .product-price-escuro{
-        color: white;
+        color: yellow;
         font-weight: bold;
         font-size: 16px;
         line-height: 19px;
@@ -247,7 +247,7 @@
     }
     
     body.dark-mode {
-        background-color: #212529;
+        background-color: black;
         color:white;
         transition: 0.5s; 
     }
