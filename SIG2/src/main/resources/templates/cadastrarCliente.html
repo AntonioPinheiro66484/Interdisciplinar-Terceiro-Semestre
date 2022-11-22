@@ -110,6 +110,7 @@
 						</span>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="input-box">
 						<label for="nome" class="label-form">Nome</label>
@@ -118,6 +119,7 @@
 						</span>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="input-box">
 						<label for="dataNascimento" class="label-form">Data Nascimento</label>
@@ -128,6 +130,7 @@
 						</span>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="input-box">
 						<label for="cep" class="label-form">CEP</label>
@@ -135,6 +138,7 @@
 						<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="input-box">
 						<label for="complemento" class="label-form">Complemento</label>
@@ -143,8 +147,38 @@
 						<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
 							class="text-danger"></span>
 					</div>
-
 				</div>
+				
+				<div class="row">
+					<div class="input-box">
+						<label for="email" class="label-form">E-mail</label>
+						<input type="text" th:field="*{email}" class="form-control" id="email"
+							placeholder="Digite seu e-mail">
+						<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+							class="text-danger"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="senha" class="label-form">Senha</label>
+						<input type="password" size="6" maxlength="6" th:field="*{senha}" class="form-control" id="senha"
+							placeholder="Digite sua senha">
+						<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}"
+							class="text-danger"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="senha" class="label-form">Confirme sua senha</label>
+						<input type="password" size="6" maxlength="6" th:field="*{senha}" class="form-control" id="senha"
+							placeholder="Digite sua senha novamente">
+						<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}"
+							class="text-danger"></span>
+					</div>
+				</div>
+
 				<div class="botao">
 					<input type="submit" class="btn btn-primary" value="Cadastrar-se">
 				</div>
