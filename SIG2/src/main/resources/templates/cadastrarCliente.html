@@ -143,8 +143,38 @@
 						<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
 							class="text-danger"></span>
 					</div>
-
 				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="email" class="label-form">Email</label>
+						<input type="email" th:field="*{email}" class="form-control" id="email"
+							placeholder="Complemento numero/apto">
+						<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+							class="text-danger"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="senha" class="label-form">Senha</label>
+						<input type="password" th:field="*{senha}" class="form-control" id="senha"
+							placeholder="Digite sua senha">
+						<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}"
+							class="text-danger"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-box">
+						<label for="senha" class="label-form">Confirmar Senha</label>
+						<input type="password" th:field="*{senha}" class="form-control" id="senha"
+							placeholder="Digite sua senha novamente:">
+						<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}"
+							class="text-danger"></span>
+					</div>
+				</div>
+
 				<div class="botao">
 					<input type="submit" class="btn btn-primary" value="Cadastrar-se">
 				</div>

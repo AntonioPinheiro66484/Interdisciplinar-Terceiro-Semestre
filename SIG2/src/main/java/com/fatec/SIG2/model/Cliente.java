@@ -27,30 +27,31 @@ public class Cliente {
 	// https://www.regular-expressions.info/
 	
 	private String dataNascimento;
-	
 	private String dataCadastro;
-
+	private String email;
+	private String senha;
 	private String sexo;
+
 	@CPF
 	@Column(unique = true) // nao funciona com @Valid tem que tratar na camada de persistencia
-	
 	private String cpf;
+
 	@NotBlank(message = "O CEP é obritatório.")
-	
 	private String cep;
-	
 	private String endereco;
+
 	@NotBlank(message = "O complemento deve ser informado")
-	
 	private String complemento;
 
-	public Cliente(String nome, String dataNascimento, String sexo, String cpf, String cep, String complemento) {
+	public Cliente(String nome, String dataNascimento, String sexo, String cpf, String cep, String complemento, String email, String password) {
         this.nome = nome;
         setDataNascimento(dataNascimento);
         this.sexo = sexo;
         this.cpf = cpf;
         this.cep = cep;
         this.complemento = complemento;
+		this.email = email;
+		this.email = senha;
     }
 
 
@@ -132,6 +133,22 @@ public class Cliente {
 
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+		public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public boolean validaData(String data) {
