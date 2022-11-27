@@ -44,6 +44,10 @@ public class Cliente {
 	
 	private String complemento;
 
+	private String email;
+
+	private String senha;
+
 	public Cliente(String nome, String dataNascimento, String sexo, String cpf, String cep, String complemento) {
         this.nome = nome;
         setDataNascimento(dataNascimento);
@@ -110,6 +114,22 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
+	public void setEmail(String email){
+		this.email = email;
+	}
+
+	public String getEmail(){
+		return email;
+	}
+
+	public void setSenha(String senha){
+		this.senha = senha;
+	}
+
+	public String getSenha(){
+		return senha;
+	}
+
 	public String getCep() {
 		return cep;
 	}
@@ -149,6 +169,8 @@ public class Cliente {
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
 		this.dataCadastro = dataAtual.toString(fmt);
 	}
+
+
 
 	// equals e tostring omitidos
 
