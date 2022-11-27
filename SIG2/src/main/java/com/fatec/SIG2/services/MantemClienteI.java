@@ -1,4 +1,5 @@
 package com.fatec.SIG2.services;
+
 import java.util.List;
 import java.util.Optional;
 import org.apache.logging.log4j.LogManager;
@@ -67,7 +68,7 @@ public class MantemClienteI implements MantemCliente {
 		Optional<Cliente> umCliente = consultaPorId(cliente.getId());
 		Endereco endereco = obtemEndereco(cliente.getCep());
 		if (umCliente.isPresent() & endereco != null) {
-			Cliente clienteModificado = new Cliente(cliente.getNome(), cliente.getDataNascimento(),cliente.getSexo(),cliente.getEmail(),cliente.getSenha(),
+			Cliente clienteModificado = new Cliente(cliente.getNome(), cliente.getDataNascimento(), cliente.getSexo(),
 					cliente.getCpf(), cliente.getCep(), cliente.getComplemento());
 			clienteModificado.setId(cliente.getId());
 			clienteModificado.obtemDataAtual(new DateTime());
