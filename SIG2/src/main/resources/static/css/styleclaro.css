@@ -47,8 +47,8 @@
         text-align: center;
     }
     
-    .product-title-escuro {
-        color: #FFF;
+    .product-title-contraste {
+        color: yellow;
         font-size: 16px;
         max-width: 100%;
         font-weight: 400;
@@ -65,8 +65,8 @@
         line-height: 19px;
     }
     
-    .product-price-escuro{
-        color: white;
+    .product-price-contraste{
+        color: yellow;
         font-weight: bold;
         font-size: 16px;
         line-height: 19px;
@@ -214,6 +214,8 @@
            padding-left: 1%;
            margin-bottom:0%;
     }
+
+    
     
     #atalhos li{
         display: inline;
@@ -255,6 +257,10 @@
     a{
         color:#FFFF;
         text-decoration: none;
+    }
+    a:hover{
+        color:yellow;
+        text-decoration: underline;
     }
     
     #titulo-pag-acess{

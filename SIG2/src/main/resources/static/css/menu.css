@@ -59,11 +59,17 @@ a{
 }
 
 .nav-link {
-    text-decoration: none;
     font-size: 1.15rem;
     color: #fff;
     font-weight: 400;
+
 }
+
+.nav-link:hover{
+    color:blue;
+    text-decoration: underline;
+}
+
 
 #menu{
     display:flex;
