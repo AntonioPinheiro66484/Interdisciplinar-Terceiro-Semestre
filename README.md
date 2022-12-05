@@ -1,12 +1,10 @@
 # SIG2
-DW3 SIG2
+Projeto Interdiciplinar
 ### Fatec ZL - Centro Paula Souza
-##### Disciplina - Programação Web III
+##### Disciplina - Laboratório de Desenvolvimento WEB
 Grupo 2 (Squirrel Tech) 
 Antonio Gabriel Pinheiro Lima,
-Gustavo Neves de Oliveira,
 Igor Machado Joaquim,
-Aline Michelle da Silva Santana,
 Vinicius Guido Vallin
 
 ##### Processo de Desenvolvimento de Software - PDS
