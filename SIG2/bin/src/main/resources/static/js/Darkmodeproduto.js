@@ -22,7 +22,7 @@ function checkStatus(){
         document.getElementsByTagName("body")[0].style.color="black";
 
         document.getElementsByTagName("p")[0].style.color="black";  //same CSS changes but for light mode
-        document.body.style.backgroundColor = "#17a2b8";
+        document.body.style.backgroundColor = "white";
     }
 }
 
@@ -32,7 +32,7 @@ function changeStatus(){                                            //This funct
         document.getElementsByTagName("body")[0].style.color="black"; 
 
         document.getElementsByTagName("p")[0].style.color="black"; //same CSS changes as in checkStatus
-        document.body.style.backgroundColor = "#17a2b8";
+        document.body.style.backgroundColor = "white";
     } else{
         localStorage.setItem('darkMode', "true");                   //same code but adapted for dark theme
         document.getElementsByTagName("body")[0].style.color="#FFF";
